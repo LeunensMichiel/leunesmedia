@@ -1,32 +1,54 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from "react"
+import React, { PureComponent } from "react"
 import PropTypes from "prop-types"
 
-import Header from "./header"
+import Toolbar from "./Navigation/Toolbar"
 import "../stylesheets/lmStyle.scss"
+import SideDrawer from "./Navigation/SideDrawer"
+import Backdrop from "./Navigation/Backdrop"
 
-const Layout = ({ children }) => {
-  return (
-    <>
-      <Header />
-      {children}
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
-    </>
-  )
+export default class Layout extends PureComponent {
+  state = {
+    sideDrawerOpen: false,
+  }
+
+  drawerToggleClickHandler = () => {
+    this.setState(prevState => {
+      return { sideDrawerOpen: !prevState.sideDrawerOpen }
+    })
+  }
+
+  backdropToggleClickHandler = () => {
+    this.setState({
+      sideDrawerOpen: false,
+    })
+  }
+
+  render() {
+    const { children } = this.props
+    const { sideDrawerOpen } = this.state
+    let sideDrawer
+    let backdrop
+
+    if (sideDrawerOpen) {
+      sideDrawer = <SideDrawer />
+      backdrop = <Backdrop click={this.backdropToggleClickHandler} />
+    }
+    return (
+      <>
+        <Toolbar hamburgerClickHandler={this.drawerToggleClickHandler} isDark />
+        {sideDrawer}
+        {backdrop}
+        {children}
+        <footer>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </footer>
+      </>
+    )
+  }
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
-
-export default Layout

@@ -63,5 +63,13 @@ module.exports = {
         htmlTitle: `Manage Leunes Media Content`,
       },
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /images/,
+        },
+      },
+    },
   ],
 }

@@ -13,6 +13,13 @@ $secondaryBlack: #656565;
 $baseFont: 1.2em/1.5 "Montserrat", sans-serif;
 $headerFont: 4.5em/1.5 bold "Open Sans", sans-serif;
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: $white;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
