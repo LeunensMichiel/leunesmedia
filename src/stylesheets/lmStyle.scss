@@ -15,6 +15,7 @@ $headerFont: 4.5em/1.5 bold "Open Sans", sans-serif;
 
 html {
   height: 100%;
+  overflow-y: auto;
 }
 
 body {
@@ -22,4 +23,6 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow: auto;
+  width: 100%;
 }

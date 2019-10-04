@@ -26,17 +26,18 @@ export default class Layout extends PureComponent {
   render() {
     const { children } = this.props
     const { sideDrawerOpen } = this.state
-    let sideDrawer
     let backdrop
 
     if (sideDrawerOpen) {
-      sideDrawer = <SideDrawer />
       backdrop = <Backdrop click={this.backdropToggleClickHandler} />
     }
     return (
       <>
         <Toolbar hamburgerClickHandler={this.drawerToggleClickHandler} isDark />
-        {sideDrawer}
+        <SideDrawer
+          show={sideDrawerOpen}
+          click={this.backdropToggleClickHandler}
+        />
         {backdrop}
         {children}
         <footer>
