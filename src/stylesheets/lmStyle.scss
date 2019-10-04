@@ -1,3 +1,18 @@
-@import 'sanitize.css';
-@import 'sanitize.css/forms.css';
-@import 'sanitize.css/typography.css';
+@import "./sanitize.css";
+@import "./forms.css";
+@import "./typography.css";
+
+//  COLORS   //
+$black: #212121;
+$white: #f9f9f9;
+$accent: #ff5858;
+$secondaryWhite: #e8e8e8;
+$secondaryBlack: #656565;
+
+//  FONTS   //
+$baseFont: 1.2em/1.5 "Montserrat", sans-serif;
+$headerFont: 4.5em/1.5 bold "Open Sans", sans-serif;
+
+body {
+  background-color: $white;
+}
