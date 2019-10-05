@@ -5,6 +5,7 @@ import Toolbar from "./Navigation/Toolbar"
 import "../stylesheets/lmStyle.scss"
 import SideDrawer from "./Navigation/SideDrawer"
 import Backdrop from "./Navigation/Backdrop"
+import Footer from "./Footer/Footer"
 
 export default class Layout extends PureComponent {
   state = {
@@ -39,12 +40,10 @@ export default class Layout extends PureComponent {
           click={this.backdropToggleClickHandler}
         />
         {backdrop}
-        {children}
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <div className="wrapper">
+          <div className="content">{children}</div>
+          <Footer />
+        </div>
       </>
     )
   }

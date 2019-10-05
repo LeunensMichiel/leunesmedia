@@ -28,16 +28,16 @@ const HamburgerIcon = styled(Hamburger)`
 `
 
 const Header = styled.header`
-  top: ${margins.LargeTop};
-  left: ${margins.LargeLeftRight};
+  top: 6.66%;
+  left: 11%;
   position: fixed;
 `
 
 const Toolbar = ({ btnColor, isDark, hamburgerClickHandler }) => (
   <Header>
-    <a onClick={hamburgerClickHandler}>
+    <span onClick={hamburgerClickHandler}>
       <HamburgerIcon isdark={isDark.toString()} />
-    </a>
+    </span>
   </Header>
 )
 
