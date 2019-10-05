@@ -27,7 +27,10 @@ const Cross = styled(CrossIcon)`
 const Navigation = styled.nav`
   height: 100%;
   background: ${colors.black};
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.33), 0 10px 10px rgba(0, 0, 0, 0.33);
+  box-shadow: ${props =>
+    props.show === "true"
+      ? " 0 14px 28px rgba(0, 0, 0, 0.33), 0 10px 10px rgba(0, 0, 0, 0.33)"
+      : ""};
   position: fixed;
   top: 0;
   left: 0;

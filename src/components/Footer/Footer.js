@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 import colors from "../Framework/colors"
-import margins from "../Framework/margins"
 import LMLogo from "../../images/logoblack.svg"
 
 import { IconContext } from "react-icons"
@@ -78,7 +77,7 @@ const StyledSpan = styled.span`
     color: ${colors.secondaryWhite};
   }
 `
-const Footer = ({}) => {
+const Footer = () => {
   return (
     <IconContext.Provider value={{ className: "social__icons" }}>
       <FooterContainer>
