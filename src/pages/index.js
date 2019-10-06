@@ -34,12 +34,11 @@ const MainImage = styled.div`
 const LogoContainer = styled.div`
   width: 80%;
   max-width: 1024px;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   flex-direction: column;
-  margin: 25vh auto 0 auto;
+  margin: -20vh auto 0 auto;
   z-index: 3;
 `
 const StyledLogo = styled(Logo)`

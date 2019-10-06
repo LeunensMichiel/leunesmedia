@@ -10,12 +10,11 @@ const HamburgerIcon = styled(Hamburger)`
   height: 3.3rem;
   width: 4rem;
   cursor: pointer;
+  transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   fill: ${props =>
     props.isdark === "true"
       ? `${colors.white} !important`
       : `${colors.black} !important`};
-
-  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 
   &:focus {
     outline: none;

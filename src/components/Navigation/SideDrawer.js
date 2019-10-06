@@ -13,7 +13,8 @@ const Cross = styled(CrossIcon)`
   width: 45px;
   cursor: pointer;
   fill: ${colors.white} !important;
-  transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-backface-visibility: hidden;
 
   &:focus {
     outline: none;
@@ -68,11 +69,11 @@ const NavigationItem = styled.li`
     text-transform: uppercase;
     color: ${colors.secondaryWhite};
     transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-backface-visibility: hidden;
     padding-bottom: 1.28em;
-  }
-
-  .activeLink {
-    color: ${colors.accent};
+    &.activeLink {
+      color: ${colors.accent};
+    }
   }
 `
 
