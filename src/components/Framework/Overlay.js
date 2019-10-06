@@ -7,13 +7,13 @@ const StyledBackdrop = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: #212121;
-  opacity: 0.9;
+  background: ${props => (props.heavy ? "#212121" : "#37383b")};
+  opacity: ${props => (props.heavy ? 0.9 : 0.66)};
   z-index: 1;
 `
 
-const Backdrop = () => {
-  return <StyledBackdrop />
+const Backdrop = ({ heavy }) => {
+  return <StyledBackdrop heavy={heavy} />
 }
 
 Backdrop.propTypes = {}

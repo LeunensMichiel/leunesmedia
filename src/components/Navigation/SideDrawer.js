@@ -19,8 +19,9 @@ const Cross = styled(CrossIcon)`
     outline: none;
   }
 
-  &:hover {
-    transform: scale(1.1);
+  &:hover,
+  &:focus {
+    transform: scale(0.95);
   }
 `
 

@@ -13,7 +13,7 @@ import { FaLinkedinIn } from "react-icons/fa"
 
 const FooterContainer = styled.footer`
   width: 100%;
-  height: 260px;
+  height: 266px;
   background: ${colors.black};
   display: flex;
   flex-direction: column;

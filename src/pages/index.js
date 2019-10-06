@@ -160,10 +160,6 @@ export default class IndexPage extends PureComponent {
     ref.current.scrollIntoView({ behavior: "smooth" })
   }
 
-  easeOutQuad(t) {
-    return t * _(2 - t)
-  }
-
   render() {
     const { data } = this.props
     return (
