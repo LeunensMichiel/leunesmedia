@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 import colors from "../Framework/colors"
 
-import Hamburger from "../../images/menu.svg"
+import Hamburger from "../../images/svgs/menu.svg"
 
 const HamburgerIcon = styled(Hamburger)`
   height: 3.3rem;

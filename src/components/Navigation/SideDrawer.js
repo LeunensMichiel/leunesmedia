@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import colors from "../Framework/colors"
 
-import CrossIcon from "../../images/cross-out.svg"
+import CrossIcon from "../../images/svgs/cross-out.svg"
 
 const Cross = styled(CrossIcon)`
   position: absolute;

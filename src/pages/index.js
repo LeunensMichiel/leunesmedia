@@ -7,11 +7,11 @@ import styled from "styled-components"
 import colors from "../components/Framework/colors"
 import Layout from "../components/layout"
 import Overlay from "../components/Framework/Overlay"
-// import SEO from "../components/seo"
-
-import Logo from "../images/logoblack.svg"
-import Chevron from "../images/right-chevron.svg"
+import SEO from "../components/seo"
 import Button from "../components/Framework/Button"
+
+import Logo from "../images/svgs/logoblack.svg"
+import Chevron from "../images/svgs/right-chevron.svg"
 
 const Jumbotron = styled.div`
   display: flex;
@@ -164,6 +164,10 @@ export default class IndexPage extends PureComponent {
     const { data } = this.props
     return (
       <Layout>
+        <SEO
+          title="Leunes Media Official Site"
+          description="Portfolio of Michiel Leunens, Photographer, Developer and Filmmaker"
+        />
         <Jumbotron>
           {data.mainImage && (
             <MainImage>

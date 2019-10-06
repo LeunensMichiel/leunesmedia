@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react"
 import PropTypes from "prop-types"
+import { Location } from "@reach/router"
 
 import Toolbar from "./Navigation/Toolbar"
 import "../stylesheets/lmStyle.scss"
@@ -29,12 +30,23 @@ export default class Layout extends PureComponent {
     const { sideDrawerOpen } = this.state
     let backdrop
 
+    // console.log(this.props.location.pathname)
+
     if (sideDrawerOpen) {
       backdrop = <Backdrop click={this.backdropToggleClickHandler} />
     }
     return (
       <>
-        <Toolbar hamburgerClickHandler={this.drawerToggleClickHandler} isDark />
+        <Location>
+          {({ navigate, location }) => (
+            <Toolbar
+              hamburgerClickHandler={this.drawerToggleClickHandler}
+              isDark={
+                location.pathname === "/" || location.pathname === "/filmmaking"
+              }
+            />
+          )}
+        </Location>
         <SideDrawer
           show={sideDrawerOpen}
           click={this.backdropToggleClickHandler}

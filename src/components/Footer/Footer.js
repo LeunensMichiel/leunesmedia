@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import colors from "../Framework/colors"
-import LMLogo from "../../images/logoblack.svg"
+import LMLogo from "../../images/svgs/logoblack.svg"
 
 import { IconContext } from "react-icons"
 import { FaFacebookSquare } from "react-icons/fa"
