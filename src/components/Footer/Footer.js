@@ -84,14 +84,46 @@ const Footer = () => {
         <FooterLine />
         <TextContainer>
           <Logo />
-          <Copyright>© 2019. All Rights Reserved.</Copyright>
+          <Copyright>
+            &copy; {new Date().getFullYear()}. All Rights Reserved.
+          </Copyright>
         </TextContainer>
         <SocialsContainer>
-          <FaFacebookSquare />
-          <FaInstagram />
-          <FaGithub />
-          <FaYoutube />
-          <FaLinkedinIn />
+          <a
+            href="https://www.facebook.com/leunesmedia"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebookSquare />
+          </a>
+          <a
+            href="https://www.instagram.com/leunesmedia/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://github.com/LeunensMichiel"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCpda_H78C5yQT1Mwm4NRgpw"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaYoutube />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/michielleunens/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedinIn />
+          </a>
         </SocialsContainer>
         <LangContainer>
           <StyledSpan active="false">nl</StyledSpan>

@@ -88,7 +88,7 @@ const DownScroll = styled.div`
   margin-left: -50vh;
   right: 50%;
   margin-right: -50vh;
-  z-index: 2;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   justify-content: center;

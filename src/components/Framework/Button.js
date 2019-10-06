@@ -26,8 +26,8 @@ const StyledButton = styled(Link)`
   }
 `
 
-const Button = ({ text }) => {
-  return <StyledButton>{text || "Learn More"}</StyledButton>
+const Button = ({ text, to }) => {
+  return <StyledButton to={to || "/"}>{text || "Learn More"}</StyledButton>
 }
 
 export default Button
