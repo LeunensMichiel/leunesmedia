@@ -10,10 +10,8 @@ $secondaryWhite: #e8e8e8;
 $secondaryBlack: #656565;
 
 //  FONTS   //
-$baseFont: 1.2em/1.5 "Montserrat",
-sans-serif;
-$headerFont: 4.5em/1.5 bold "Open Sans",
-sans-serif;
+$baseFont: 1.2em/1.5 "Montserrat", sans-serif;
+$headerFont: 4.5em/1.5 bold "Open Sans", sans-serif;
 
 ::selection {
   background-color: $accent;
@@ -70,11 +68,10 @@ body {
 
 .custom__popup {
   width: 100% !important;
-  max-height: 100% !important;
-  max-width: 1024px !important;
-  min-width: initial !important;
   border-radius: 0px !important;
   box-shadow: none !important;
+  background: none !important;
+  pointer-events: none;
 
   .popupbox-content {
     padding: 0 !important;

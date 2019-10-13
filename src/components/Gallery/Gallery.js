@@ -45,6 +45,14 @@ export default class Gallery extends PureComponent {
         fluid={image}
         objectFit="contain"
         objectPosition="50% 50%"
+        style={{
+          maxWidth: "85vh",
+          maxHeight: "85vh",
+          margin: "0 auto",
+          width: "100%",
+          flex: 1,
+        }}
+        imgStyle={{ height: "auto", maxWidth: "100%", maxHeight: "100%" }}
       />
     )
     PopupboxManager.open({
@@ -96,7 +104,7 @@ export default class Gallery extends PureComponent {
               edges {
                 node {
                   childImageSharp {
-                    fluid(maxWidth: 1024, quality: 85) {
+                    fluid(maxWidth: 1080, quality: 100) {
                       presentationWidth
                       presentationHeight
                       ...GatsbyImageSharpFluid_withWebp_tracedSVG
