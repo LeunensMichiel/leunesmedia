@@ -77,3 +77,17 @@ body {
     padding: 0 !important;
   }
 }
+
+.tooltip {
+  background-color: $accent !important;
+  color: $white !important;
+  padding: 0.66em 1em !important;
+  border-radius: 2px !important;
+  transition: opacity 0.2s ease-out 0s, visibility 0.2s ease-out 0s !important;
+
+  &.place-bottom {
+    &:after {
+      border-bottom-color: $accent !important;
+    }
+  }
+}

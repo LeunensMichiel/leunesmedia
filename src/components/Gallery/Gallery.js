@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react"
 import styled from "styled-components"
+import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 import { PopupboxManager, PopupboxContainer } from "react-popupbox"
-import { StaticQuery, graphql } from "gatsby"
 import _ from "lodash"
 
 import "react-popupbox/dist/react-popupbox.css"

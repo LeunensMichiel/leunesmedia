@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react"
 import PropTypes from "prop-types"
 import { Location } from "@reach/router"
+import { IconContext } from "react-icons"
 
 import Toolbar from "./Navigation/Toolbar"
 import "../stylesheets/lmStyle.scss"
@@ -37,25 +38,28 @@ export default class Layout extends PureComponent {
     }
     return (
       <>
-        <Location>
-          {({ navigate, location }) => (
-            <Toolbar
-              hamburgerClickHandler={this.drawerToggleClickHandler}
-              isDark={
-                location.pathname === "/" || location.pathname === "/filmmaking"
-              }
-            />
-          )}
-        </Location>
-        <SideDrawer
-          show={sideDrawerOpen}
-          click={this.backdropToggleClickHandler}
-        />
-        {backdrop}
-        <div className="wrapper">
-          <div className="content">{children}</div>
-          <Footer />
-        </div>
+        <IconContext.Provider value={{ className: "social__icons" }}>
+          <Location>
+            {({ navigate, location }) => (
+              <Toolbar
+                hamburgerClickHandler={this.drawerToggleClickHandler}
+                isDark={
+                  location.pathname === "/" ||
+                  location.pathname === "/filmmaking"
+                }
+              />
+            )}
+          </Location>
+          <SideDrawer
+            show={sideDrawerOpen}
+            click={this.backdropToggleClickHandler}
+          />
+          {backdrop}
+          <div className="wrapper">
+            <div className="content">{children}</div>
+            <Footer />
+          </div>
+        </IconContext.Provider>
       </>
     )
   }

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -25,7 +25,7 @@ const StyledHeader = styled.h1`
   -webkit-background-clip: text;
   color: transparent;
 `
-const StyledAnchor = styled(Link)`
+const StyledAnchor = styled.a`
   color: ${colors.secondaryBlack};
   display: flex;
   justify-content: center;
@@ -33,6 +33,7 @@ const StyledAnchor = styled(Link)`
   text-decoration: none;
   margin-top: 1em;
   transition: 0.2s cubic-bezier(0.19, 1, 0.22, 1) all;
+  cursor: pointer;
 
   &:hover,
   &:active {
@@ -60,7 +61,12 @@ const NotFoundPage = ({ data }) => (
       <StyledHeader src={data.notFound.childImageSharp.fluid.src}>
         404.
       </StyledHeader>
-      <StyledAnchor to="/about">
+      <StyledAnchor
+        onClick={e => {
+          e.preventDefault()
+          window.history.back()
+        }}
+      >
         <span>go back</span>
         <Chevron />
       </StyledAnchor>
@@ -77,7 +83,7 @@ export const query = graphql`
         fluid(maxWidth: 1024, quality: 66) {
           presentationWidth
           presentationHeight
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

@@ -164,7 +164,7 @@ export default class IndexPage extends PureComponent {
     return (
       <Layout>
         <SEO
-          title="Leunes Media Official Site"
+          title="Portfolio"
           description="Portfolio of Michiel Leunens, Photographer, Developer and Filmmaker"
         />
         <Jumbotron>

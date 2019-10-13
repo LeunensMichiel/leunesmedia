@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Leunes Media Portfolio`,
+    title: `Leunes Media`,
     description: `Portfolio of Michiel Leunens, founder of Leunes Media`,
     author: `@LeunensMichiel`,
   },

@@ -4,7 +4,6 @@ import styled from "styled-components"
 import colors from "../Framework/colors"
 import LMLogo from "../../images/svgs/logoblack.svg"
 
-import { IconContext } from "react-icons"
 import { FaFacebookSquare } from "react-icons/fa"
 import { FaInstagram } from "react-icons/fa"
 import { FaGithub } from "react-icons/fa"
@@ -79,59 +78,57 @@ const StyledSpan = styled.span`
 `
 const Footer = () => {
   return (
-    <IconContext.Provider value={{ className: "social__icons" }}>
-      <FooterContainer>
-        <FooterLine />
-        <TextContainer>
-          <Logo />
-          <Copyright>
-            &copy; {new Date().getFullYear()}. All Rights Reserved.
-          </Copyright>
-        </TextContainer>
-        <SocialsContainer>
-          <a
-            href="https://www.facebook.com/leunesmedia"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaFacebookSquare />
-          </a>
-          <a
-            href="https://www.instagram.com/leunesmedia/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram />
-          </a>
-          <a
-            href="https://github.com/LeunensMichiel"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.youtube.com/channel/UCpda_H78C5yQT1Mwm4NRgpw"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaYoutube />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/michielleunens/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedinIn />
-          </a>
-        </SocialsContainer>
-        <LangContainer>
-          <StyledSpan active="false">nl</StyledSpan>
-          &nbsp;|&nbsp;
-          <StyledSpan active="true">en</StyledSpan>
-        </LangContainer>
-      </FooterContainer>
-    </IconContext.Provider>
+    <FooterContainer>
+      <FooterLine />
+      <TextContainer>
+        <Logo />
+        <Copyright>
+          &copy; {new Date().getFullYear()}. All Rights Reserved.
+        </Copyright>
+      </TextContainer>
+      <SocialsContainer>
+        <a
+          href="https://www.facebook.com/leunesmedia"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaFacebookSquare />
+        </a>
+        <a
+          href="https://www.instagram.com/leunesmedia/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaInstagram />
+        </a>
+        <a
+          href="https://github.com/LeunensMichiel"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UCpda_H78C5yQT1Mwm4NRgpw"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaYoutube />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/michielleunens/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedinIn />
+        </a>
+      </SocialsContainer>
+      <LangContainer>
+        <StyledSpan active="false">nl</StyledSpan>
+        &nbsp;|&nbsp;
+        <StyledSpan active="true">en</StyledSpan>
+      </LangContainer>
+    </FooterContainer>
   )
 }
 

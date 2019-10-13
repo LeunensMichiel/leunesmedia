@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import Gallery from "../components/Gallery/Gallery"
 import colors from "../components/Framework/colors"
+import SEO from "../components/seo"
 
 const PhotoContainer = styled.div`
   width: 100%;
@@ -50,6 +51,10 @@ export default class photography extends PureComponent {
     const { type } = this.state
     return (
       <Layout>
+        <SEO
+          title="Photography"
+          description="Some shots taken by Michiel Leunens, Leunes Media"
+        />
         <PhotoContainer>
           <Menu>
             <MenuItem

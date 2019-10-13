@@ -18,6 +18,13 @@ const HamburgerIcon = styled(Hamburger)`
       ? `${colors.white} !important`
       : `${colors.black} !important`};
 
+  &.theme__dark {
+    fill: ${props =>
+      props.isdark === "false"
+        ? `${colors.white} !important`
+        : `${colors.black} !important`};
+  }
+
   &:focus {
     outline: none;
   }
@@ -27,6 +34,12 @@ const HamburgerIcon = styled(Hamburger)`
       props.isdark === "true"
         ? `${colors.secondaryWhite} !important`
         : `${colors.secondaryBlack} !important`};
+    &.theme__dark {
+      fill: ${props =>
+        props.isdark === "false"
+          ? `${colors.secondaryWhite} !important`
+          : `${colors.secondaryBlack} !important`};
+    }
   }
 `
 
@@ -40,7 +53,7 @@ const Header = styled.header`
 const Toolbar = ({ isDark, hamburgerClickHandler }) => (
   <Header>
     <span onClick={hamburgerClickHandler}>
-      <HamburgerIcon isdark={isDark.toString()} />
+      <HamburgerIcon isdark={isDark.toString()} id="hamburger" />
     </span>
   </Header>
 )
