@@ -11,6 +11,8 @@ const HamburgerIcon = styled(Hamburger)`
   width: 4rem;
   cursor: pointer;
   transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-backface-visibility: hidden;
+
   fill: ${props =>
     props.isdark === "true"
       ? `${colors.white} !important`
@@ -29,8 +31,8 @@ const HamburgerIcon = styled(Hamburger)`
 `
 
 const Header = styled.header`
-  top: 6.66%;
-  left: 11%;
+  top: 10vh;
+  left: 10vh;
   position: fixed;
   z-index: 99;
 `
