@@ -57,6 +57,7 @@ const ImageGrid = styled.div`
   height: 225px;
   /* align-content: end; */
   width: 100%;
+  margin-bottom: 10.1vh;
 `
 
 const GridItem = styled.div`
@@ -69,12 +70,25 @@ const GridItem = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+  opacity: ${props => (props.isSelected ? "1" : ".33")};
+  backface-visibility: hidden;
+`
+
+const VidContainer = styled.div`
+  width: 100%;
+  max-width: 1024px;
+  margin-bottom: 10.1vh;
+  .aspect {
+    position: relative;
+    padding-top: 56.25%;
+  }
 `
 
 export default class photography extends PureComponent {
   state = {
     type: "aftermovie",
     checked: true,
+    selectedVideo: 0,
   }
 
   onChangeMenuItem = type => {
@@ -90,12 +104,19 @@ export default class photography extends PureComponent {
     document.getElementById("hamburger").classList.toggle("theme__dark")
   }
 
+  onChangeVideo = index => {
+    this.setState({
+      selectedVideo: index,
+    })
+  }
+
   render() {
     const { data } = this.props
-    const { type, checked } = this.state
+    const { type, checked, selectedVideo } = this.state
     const finalImages = _.filter(data.images.edges, img => {
       return img.node.relativeDirectory.includes(type)
     })
+    const urls = ["jT7KIXLajjY"]
 
     return (
       <Layout>
@@ -132,9 +153,31 @@ export default class photography extends PureComponent {
               handleToggle={() => this.onChangeSwitch(!checked)}
             />
           </Menu>
+          <VidContainer>
+            <div className="aspect">
+              <iframe
+                id="ytplayer"
+                type="text/html"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
+                src={`https://www.youtube.com/embed/${urls[selectedVideo]}?enablejsapi=1`}
+                frameBorder="0"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </VidContainer>
           <ImageGrid>
-            {finalImages.map(image => (
-              <GridItem key={image.node.childImageSharp.fixed.src}>
+            {finalImages.map((image, i) => (
+              <GridItem
+                key={image.node.childImageSharp.fixed.src}
+                onClick={() => this.onChangeVideo(i)}
+                isSelected={selectedVideo === i}
+              >
                 <Img
                   alt={image.node.childImageSharp.fixed.originalName}
                   fixed={image.node.childImageSharp.fixed}
