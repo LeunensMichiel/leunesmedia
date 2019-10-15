@@ -84,7 +84,7 @@ const VidContainer = styled.div`
   }
 `
 
-export default class photography extends PureComponent {
+export default class filmmaking extends PureComponent {
   state = {
     type: "aftermovie",
     checked: true,

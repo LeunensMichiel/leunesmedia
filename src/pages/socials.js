@@ -45,7 +45,7 @@ const ToolTipText = styled.div`
   font-size: 1em;
 `
 
-export default class photography extends PureComponent {
+export default class soials extends PureComponent {
   render() {
     return (
       <Layout>
