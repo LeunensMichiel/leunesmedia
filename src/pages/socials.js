@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react"
 import styled from "styled-components"
 import ReactTooltip from "react-tooltip"
+import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout"
 import colors from "../components/Framework/colors"
@@ -146,6 +147,15 @@ export default class photography extends PureComponent {
               <ToolTipText>hire me</ToolTipText>
             </ReactTooltip>
           </SocialIconsContainer>
+          <Helmet>
+            <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+          </Helmet>
+          <iframe
+            src="//lightwidget.com/widgets/5dc12e42abcb5e97b5f3fd2ee0589eb4.html"
+            scrolling="no"
+            allowTransparency="true"
+            className="lightwidget-widget"
+          ></iframe>
         </SocialsContainer>
       </Layout>
     )

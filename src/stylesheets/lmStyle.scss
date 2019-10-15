@@ -10,8 +10,10 @@ $secondaryWhite: #e8e8e8;
 $secondaryBlack: #656565;
 
 //  FONTS   //
-$baseFont: 1.2em/1.5 "Montserrat", sans-serif;
-$headerFont: 4.5em/1.5 bold "Open Sans", sans-serif;
+$baseFont: 1.2em/1.5 "Montserrat",
+sans-serif;
+$headerFont: 4.5em/1.5 bold "Open Sans",
+sans-serif;
 
 ::selection {
   background-color: $accent;
@@ -90,4 +92,12 @@ body {
       border-bottom-color: $accent !important;
     }
   }
+}
+
+.lightwidget-widget {
+  margin-top: 5em;
+  width: 100%;
+  border: 0;
+  overflow: hidden;
+  min-height: 80vh;
 }
