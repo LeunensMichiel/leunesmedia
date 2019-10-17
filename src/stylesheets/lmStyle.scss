@@ -101,3 +101,12 @@ body {
   overflow: hidden;
   min-height: 80vh;
 }
+
+.simpleAnchor {
+  color: $accent;
+  transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1) all;
+
+  &:hover {
+    color: $secondaryBlack;
+  }
+}
