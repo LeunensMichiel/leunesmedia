@@ -31,8 +31,7 @@ const TypeContainer = styled.div`
 const DownScroll = styled.div`
   color: ${colors.black};
   cursor: pointer;
-
-  svg {
+  opacity: ${props => (props.done ? 1 : 0)} svg {
     height: 1em;
     width: 2em;
     transform: rotate(90deg);
@@ -49,7 +48,7 @@ const OrganicContainer = styled.div`
   display: flex;
   width: 100%;
   max-width: 1024px;
-  height: 90vh;
+  height: 95vh;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
@@ -112,15 +111,66 @@ const OtherSubHeader = styled.span`
   font-size: 0.66em;
 `
 
+const TwallieContainer = styled.div`
+  width: 100%;
+  height: 40vh;
+  background: ${colors.black};
+  margin-bottom: 40vh;
+`
+
+const TwallieSecondContainer = styled.div`
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+`
+
+const TwallieSiteImg = styled(Img)`
+  width: 90%;
+  margin-left: auto;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2),
+    0 10px 10px -5px rgba(0, 0, 0, 0.1);
+`
+
+const TwallieCard = styled.div`
+  width: 100%;
+  max-width: 350px;
+  height: 130%;
+  background: #37383b;
+  position: absolute;
+  left: 0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5),
+    0 10px 10px -5px rgba(0, 0, 0, 0.1);
+`
+
+const CardHeader = styled.h4`
+  text-transform: uppercase;
+  color: ${colors.white};
+  font-size: 2.6em;
+`
+
 export default class development extends PureComponent {
-  state = {
-    start: 100,
-    played: false,
+  constructor() {
+    super()
+    this.state = {
+      start: 100,
+      played: false,
+      typingDone: false,
+    }
+    this.mainRef = React.createRef()
+  }
+
+  scroll(ref) {
+    ref.current.scrollIntoView({ behavior: "smooth" })
   }
 
   render() {
     const { data } = this.props
-    const { start, played } = this.state
+    const { start, played, typingDone } = this.state
     return (
       <Layout>
         <SEO
@@ -128,13 +178,23 @@ export default class development extends PureComponent {
           description="Web and mobile projects made by Michiel Leunens, Leunes Media"
         />
         <TypeContainer>
-          <Typist startDelay={1500} avgTypingDelay={100} stdTypingDelay={50}>
-            I'm a developer.
+          <Typist
+            startDelay={1500}
+            avgTypingDelay={100}
+            stdTypingDelay={50}
+            onTypingDone={() => {
+              this.setState({ typingDone: true })
+            }}
+          >
+            I'm a ner
+            <Typist.Backspace count={3} delay={300} />
+            developer.
           </Typist>
           <DownScroll
-          // onClick={() => {
-          //   this.scroll(this.mainRef)
-          // }}
+            done={typingDone}
+            onClick={() => {
+              this.scroll(this.mainRef)
+            }}
           >
             <Chevron />
           </DownScroll>
@@ -146,8 +206,8 @@ export default class development extends PureComponent {
             this.setState({ start: isVisible && !played ? 0 : 100 })
           }}
         >
-          <OrganicContainer>
-            <OrganicText svg={Coffee.svg}>
+          <OrganicContainer ref={this.mainRef}>
+            <OrganicText>
               <StyledCoffee />
               <AboveHeader>No templates. No Wordpress.</AboveHeader>
               <Header>
@@ -190,6 +250,14 @@ export default class development extends PureComponent {
             </OtherStuff>
           </OrganicContainer>
         </VisibilitySensor>
+        <TwallieContainer>
+          <TwallieSecondContainer>
+            <TwallieSiteImg fluid={data.twallieImage.childImageSharp.fluid} />
+            <TwallieCard>
+              <CardHeader>Twallie</CardHeader>
+            </TwallieCard>
+          </TwallieSecondContainer>
+        </TwallieContainer>
       </Layout>
     )
   }
@@ -198,6 +266,15 @@ export default class development extends PureComponent {
 export const query = graphql`
   query {
     headerImage: file(relativePath: { eq: "laptop-coffee.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 2048, quality: 100) {
+          presentationWidth
+          presentationHeight
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    twallieImage: file(relativePath: { eq: "twallie.png" }) {
       childImageSharp {
         fluid(maxWidth: 2048, quality: 100) {
           presentationWidth
