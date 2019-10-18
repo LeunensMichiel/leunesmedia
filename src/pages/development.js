@@ -114,18 +114,13 @@ const OtherSubHeader = styled.span`
 
 export default class development extends PureComponent {
   state = {
-    start: 0,
-  }
-
-  onChange(isVisible) {
-    this.setState({
-      start: isVisible ? 0 : 100,
-    })
+    start: 100,
+    played: false,
   }
 
   render() {
     const { data } = this.props
-    const { start } = this.state
+    const { start, played } = this.state
     return (
       <Layout>
         <SEO
@@ -145,15 +140,31 @@ export default class development extends PureComponent {
           </DownScroll>
         </TypeContainer>
         <HeaderImage fluid={data.headerImage.childImageSharp.fluid} />
-        <VisibilitySensor onChange={this.onChange()}>
+        <VisibilitySensor
+          partialVisibility
+          onChange={isVisible => {
+            this.setState({ start: isVisible && !played ? 0 : 100 })
+          }}
+        >
           <OrganicContainer>
             <OrganicText svg={Coffee.svg}>
               <StyledCoffee />
               <AboveHeader>No templates. No Wordpress.</AboveHeader>
               <Header>
                 This site is{" "}
-                <CountUp start={start} end={100} duration={2.75} suffix="% " />
-                made out of organic code.
+                <CountUp
+                  start={start}
+                  end={100}
+                  duration={2.75}
+                  suffix="% "
+                  delay={1}
+                  onEnd={() => this.setState({ played: true })}
+                  easingFn={(t = 0.19, b = 1, c = 0.22, d = 1) =>
+                    c * (-Math.pow(2, (-10 * t) / d) + 1) + b
+                  }
+                />
+                made out
+                <br /> of organic code.
               </Header>
             </OrganicText>
             <OtherStuff>
