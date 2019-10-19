@@ -219,7 +219,7 @@ export default class IndexPage extends PureComponent {
               Snapping life's precious & short moments, shooting moody
               landscapes, capturing intriguing eyes and everything in between.
             </SectionParagraph>
-            <Button />
+            <Button to="/photography" />
           </MainSectionInfo>
         </MainSection>
         <MainSection>
@@ -243,7 +243,7 @@ export default class IndexPage extends PureComponent {
               both? As a top-notch Computer Science student at UGent, I can
               deliver. But first: coffee.
             </SectionParagraph>
-            <Button />
+            <Button to="/development" />
           </MainSectionInfo>
         </MainSection>
         <MainSection>
@@ -267,7 +267,7 @@ export default class IndexPage extends PureComponent {
               for a cool way to promote your business? Relive the moment like
               you were there through an aftermovie? Look no further!
             </SectionParagraph>
-            <Button />
+            <Button to="/filmmaking" />
           </MainSectionInfo>
         </MainSection>
       </Layout>

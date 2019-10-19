@@ -13,7 +13,8 @@ const StyledButton = styled(Link)`
   border: 2px solid ${colors.accent};
   border-radius: 2px;
   padding: 0.8em 2.2em;
-  transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-backface-visibility: hidden;
 
   &:hover,
   &:focus {

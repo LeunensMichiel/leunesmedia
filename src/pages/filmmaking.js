@@ -168,6 +168,7 @@ export default class filmmaking extends PureComponent {
                 src={`https://www.youtube.com/embed/${urls[selectedVideo]}?enablejsapi=1`}
                 frameBorder="0"
                 allowFullScreen
+                title="Player"
               ></iframe>
             </div>
           </VidContainer>

@@ -154,6 +154,7 @@ export default class soials extends PureComponent {
             src="//lightwidget.com/widgets/5dc12e42abcb5e97b5f3fd2ee0589eb4.html"
             scrolling="no"
             allowTransparency="true"
+            title="Instagram feed Leunes Media"
             className="lightwidget-widget"
           ></iframe>
         </SocialsContainer>

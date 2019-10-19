@@ -32,6 +32,7 @@ const SwitchLabel = styled.label`
   transition: background-color 0.2s;
   box-sizing: content-box;
   transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-backface-visibility: hidden;
 
   &:active span {
     width: 50px;
