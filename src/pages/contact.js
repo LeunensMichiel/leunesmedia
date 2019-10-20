@@ -115,12 +115,15 @@ const SecondColumn = styled.div`
 
 const InputContainer = styled.div`
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
   position: relative;
+
+  &.textareaContainer {
+    height: 100%;
+  }
 `
 
 const StyledLabel = styled.label`
@@ -159,7 +162,7 @@ const StyledInput = styled.input`
 
 const StyledButton = styled.button`
   cursor: pointer;
-  margin-top: 58px;
+  margin-top: 40px;
   color: ${colors.accent};
   text-decoration: none;
   font-family: "Open Sans";
@@ -306,7 +309,7 @@ export default class contact extends PureComponent {
                 </InputContainer>
               </FirstColumn>
               <SecondColumn>
-                <InputContainer>
+                <InputContainer className="textareaContainer">
                   <StyledLabel for="message">
                     Message<sup>*</sup>
                   </StyledLabel>
