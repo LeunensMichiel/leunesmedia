@@ -350,9 +350,9 @@ export default class contact extends PureComponent {
           </Information>
         </ContactContainer>
         <Map
-          style={`${process.env.MAP_STYLE}`}
-          zoom={[9]}
-          center={[4.020963, 50.939672]}
+          style="mapbox://styles/michielleunens/ck1z1q0fo2vml1cpoqt76zhjn"
+          zoom={[15.4]}
+          center={[3.724524, 51.040051]}
           containerStyle={{
             height: "50vh",
             width: "100%",
