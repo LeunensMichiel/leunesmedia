@@ -223,7 +223,7 @@ const Annotation = styled.span`
 export default class contact extends PureComponent {
   render() {
     const Map = ReactMapboxGl({
-      accessToken: `${process.env.MAP_API}`,
+      accessToken: `${process.env.GATSBY_MAP_API}`,
     })
     return (
       <Layout>
