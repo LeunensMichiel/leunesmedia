@@ -410,6 +410,7 @@ export default class about extends PureComponent {
   }
   render() {
     const { data } = this.props
+
     return (
       <Layout>
         <SEO
