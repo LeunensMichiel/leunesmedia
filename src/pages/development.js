@@ -496,7 +496,7 @@ const GhenterpriseImage = styled.div`
 const MorrocoCard = styled.div`
   width: 100%;
   max-width: 320px;
-  height: 75%;
+  height: 66%;
   padding: 1em 0.5em;
   background: #37383b;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5),
@@ -505,7 +505,7 @@ const MorrocoCard = styled.div`
   flex-direction: column;
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -20px;
   z-index: 3;
 `
 
@@ -673,7 +673,7 @@ export default class development extends PureComponent {
                   Belgian DJ: Twallie
                 </CardDescription>
                 <CardTechs>
-                  <CardTech>JavaScript</CardTech>
+                  <CardTech>Gatsby.js</CardTech>
                   <CardTech>React</CardTech>
                   <CardTech>NetlifyCMS</CardTech>
                 </CardTechs>

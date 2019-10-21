@@ -1,12 +1,19 @@
 import React, { PureComponent } from "react"
 import styled from "styled-components"
-import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl"
+import MapGL, {
+  Marker,
+  NavigationControl,
+  FullscreenControl,
+} from "react-map-gl"
 
 import Layout from "../components/layout"
 import colors from "../components/Framework/colors"
 import SEO from "../components/seo"
 
 import Logo from "../images/svgs/logoblack.svg"
+import Pin from "../images/svgs/marker-15.svg"
+
+import "mapbox-gl/dist/mapbox-gl.css"
 
 const ContactContainer = styled.div`
   width: 100%;
@@ -221,10 +228,24 @@ const Annotation = styled.span`
 `
 
 export default class contact extends PureComponent {
+  constructor() {
+    super()
+    this.state = {
+      viewport: {
+        longitude: 3.724524,
+        latitude: 51.040051,
+        zoom: 15.4,
+      },
+    }
+  }
+
+  updateViewport = viewport => {
+    this.setState({ viewport })
+  }
+
   render() {
-    const Map = ReactMapboxGl({
-      accessToken: `${process.env.GATSBY_MAP_API}`,
-    })
+    const { viewport } = this.state
+
     return (
       <Layout>
         <SEO
@@ -349,24 +370,37 @@ export default class contact extends PureComponent {
             </InformationBlock>
           </Information>
         </ContactContainer>
-        <Map
-          style="mapbox://styles/michielleunens/ck1z1q0fo2vml1cpoqt76zhjn"
-          zoom={[15.4]}
-          center={[3.724524, 51.040051]}
-          containerStyle={{
-            height: "50vh",
-            width: "100%",
-          }}
+        <MapGL
+          {...viewport}
+          width="100%"
+          height="50vh"
+          mapStyle={`${process.env.GATSBY_MAP_STYLE}`}
+          onViewportChange={this.updateViewport}
+          mapboxApiAccessToken={`${process.env.GATSBY_MAP_API}`}
         >
-          <Layer
-            type="symbol"
-            id="marker"
-            layout={{ "icon-image": "marker-15" }}
+          <div style={{ position: "absolute", right: 10, top: 10 }}>
+            <FullscreenControl />
+          </div>
+          <div style={{ position: "absolute", right: 10, top: 50 }}>
+            <NavigationControl />
+          </div>
+          <Marker
+            longitude={3.724524}
+            latitude={51.040051}
+            offsetLeft={-20}
+            offsetTop={-10}
           >
-            <Feature coordinates={[3.724524, 51.040051]} />
-            <Feature coordinates={[4.235968, 50.821324]} />
-          </Layer>
-        </Map>
+            <Pin />
+          </Marker>
+          <Marker
+            longitude={4.235968}
+            latitude={50.821324}
+            offsetLeft={-20}
+            offsetTop={-10}
+          >
+            <Pin />
+          </Marker>
+        </MapGL>
       </Layout>
     )
   }
