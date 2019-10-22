@@ -6,13 +6,19 @@ import { PopupboxManager, PopupboxContainer } from "react-popupbox"
 import _ from "lodash"
 
 import "react-popupbox/dist/react-popupbox.css"
+import screens from "../Framework/Screens"
 
 const ImageGrid = styled.div`
+  padding: 0 0.66em;
   display: grid;
-  grid-gap: 0.66em;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-rows: minmax(3em, auto);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-flow: dense;
+  grid-gap: 0.66em;
+
+  @media ${screens.laptop} {
+    padding: 0;
+  }
 `
 
 const GridItem = styled.div`
@@ -22,7 +28,7 @@ const GridItem = styled.div`
     filter: brightness(0.7);
   }
 
-  @media (min-width: 769px) {
+  @media ${screens.tablet} {
     &:nth-child(4n - 1) {
       grid-column: span 2;
       grid-row: span 2;
@@ -46,8 +52,8 @@ export default class Gallery extends PureComponent {
         objectFit="contain"
         objectPosition="50% 50%"
         style={{
-          maxWidth: "85vh",
-          maxHeight: "85vh",
+          maxWidth: "90vh",
+          maxHeight: "90vh",
           margin: "0 auto",
           width: "100%",
           flex: 1,

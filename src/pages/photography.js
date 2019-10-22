@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Gallery from "../components/Gallery/Gallery"
 import colors from "../components/Framework/colors"
 import SEO from "../components/seo"
+import screens from "../components/Framework/Screens"
 
 const PhotoContainer = styled.div`
   width: 100%;
@@ -16,8 +17,14 @@ const Menu = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  flex-direction: column;
   align-items: center;
-  margin: 10.1vh 0;
+  margin: 20.2vh 0 10.1vh 0;
+
+  @media ${screens.laptop} {
+    flex-direction: row;
+    margin: 10.1vh 0;
+  }
 `
 
 const MenuItem = styled.a`
@@ -25,7 +32,7 @@ const MenuItem = styled.a`
   text-transform: uppercase;
   font-size: 2em;
   font-weight: 200;
-  margin-left: 1em;
+  margin-left: 0;
   color: ${props => (props.active ? colors.black : colors.secondaryBlack)};
   transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   -webkit-backface-visibility: hidden;
@@ -33,6 +40,10 @@ const MenuItem = styled.a`
 
   &:hover {
     color: ${colors.black};
+  }
+
+  @media ${screens.laptop} {
+    margin-left: 1em;
   }
 `
 
