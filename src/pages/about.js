@@ -14,17 +14,25 @@ import Photoshop from "../images/svgs/ps.svg"
 import AE from "../images/svgs/ae.svg"
 import XD from "../images/svgs/xd.svg"
 import Illustrator from "../images/svgs/ai.svg"
+import screens from "../components/Framework/Screens"
 
 const AboutContainer = styled.div`
-  min-height: 85vh;
+  min-height: 100vh;
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
+  padding: 20.2vh 1.5em;
   display: flex;
-  padding: 20.2vh 0;
+  flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
   position: relative;
+
+  @media ${screens.laptop} {
+    flex-direction: row;
+    min-height: 85vh;
+    padding: 20.2vh 0;
+  }
 `
 
 const AboutTextContainer = styled.div`
@@ -42,15 +50,23 @@ const AboutHeader = styled.div`
 
 const AboutTitle = styled.h1`
   margin: 0;
-  font-size: 1.4em;
+  font-size: 1.2em;
+
+  @media ${screens.laptop} {
+    font-size: 1.4em;
+  }
 `
 
 const AboutSubTitle = styled.h2`
   font-family: "Montserrat", sans-serif;
-  font-size: 1em;
+  font-size: 0.9em;
   margin: 0 0 0.8em 0;
   font-weight: 300;
   color: ${colors.secondaryBlack};
+
+  @media ${screens.laptop} {
+    font-size: 1em;
+  }
 `
 
 const AboutDivider = styled.div`
@@ -58,25 +74,35 @@ const AboutDivider = styled.div`
   width: 60px;
   height: 2px;
   background: ${colors.accent};
+  margin: 1.5em 0;
+
+  @media ${screens.laptop} {
+    margin: 0;
+  }
 `
 
 const AboutParagraph = styled.p`
   color: ${colors.secondaryBlack};
   text-align: justify;
-  font-size: 0.9em;
+  font-size: 0.8em;
+
+  @media ${screens.laptop} {
+    font-size: 0.9em;
+  }
 `
 
 const AboutSocialSkills = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 `
 
 const SocialSkill = styled.span`
   background: ${colors.accent};
   color: ${colors.white};
   font-size: 0.7em;
-  margin: 0 0.5em;
+  margin: 0.5em 0.5em;
   padding: 0.33em 0.66em;
   border-radius: 50px;
   transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
@@ -85,6 +111,10 @@ const SocialSkill = styled.span`
   &:hover,
   &:focus {
     color: ${colors.black};
+  }
+
+  @media ${screens.laptop} {
+    margin: 0 0.5em;
   }
 `
 
@@ -118,13 +148,17 @@ const DownScroll = styled.div`
 
 const AboutImg = styled(Img)`
   flex: 1;
-  margin-right: 5em;
+  margin-bottom: 1.5em;
+  @media ${screens.laptop} {
+    margin-right: 5em;
+    margin-bottom: 0em;
+  }
 `
 
 const SkillsContainer = styled.div`
   min-height: 100vh;
   width: 100%;
-  padding: 15.1vh 0;
+  padding: 15.1vh 1.5em;
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -132,6 +166,10 @@ const SkillsContainer = styled.div`
   background: ${colors.black};
   color: ${colors.white};
   overflow: hidden;
+
+  @media ${screens.laptop} {
+    padding: 15.1vh 0;
+  }
 `
 
 const SkillsInnerContainer = styled.div`
@@ -139,10 +177,16 @@ const SkillsInnerContainer = styled.div`
   max-width: 1024px;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   position: relative;
   z-index: 4;
-  text-align: right;
+  text-align: center;
+
+  @media ${screens.laptop} {
+    flex-direction: row;
+    text-align: right;
+  }
 `
 
 const Skills = styled.div`
@@ -152,24 +196,37 @@ const Skills = styled.div`
   justify-content: center;
   flex: 1;
   width: 100%;
-  margin-right: 2em;
+  margin-bottom: 1.5em;
+
+  @media ${screens.laptop} {
+    margin-right: 2em;
+    margin-bottom: 0;
+  }
 `
 
 const Skill = styled.div`
   display: flex;
-  flex-direction: ${props => (props.reverse ? "row-reverse" : "row")};
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100%;
-  margin: 0.2em 0;
+  margin: 0 0 0.5em 0;
 
   span {
-    ${props => (!props.reverse ? "margin-right: 1.5em" : "")};
-    align-items: center;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    flex: 1;
+  }
+
+  @media ${screens.laptop} {
+    align-items: center;
+    flex-direction: ${props => (props.reverse ? "row-reverse" : "row")};
+    margin: 0.2em 0;
+
+    span {
+      ${props => (!props.reverse ? "margin-right: 1.5em" : "")};
+      flex: 1;
+    }
   }
 `
 
@@ -178,6 +235,11 @@ const Bar = styled.div`
   width: 100%;
   flex: 3;
   position: relative;
+  margin-top: 0.5em;
+
+  @media ${screens.laptop} {
+    margin-top: 0;
+  }
 `
 
 const GrayBar = styled.div`
@@ -191,28 +253,41 @@ const GrayBar = styled.div`
 
 const RedBar = styled.div`
   position: absolute;
-  ${props => (props.reverse ? "right: 0" : "left: 0")};
   top: 0;
   content: "";
   width: ${props => (props.percentage ? props.percentage : 0)}%;
   height: 2px;
   background: ${colors.accent};
   display: block;
+
+  @media ${screens.laptop} {
+    ${props => (props.reverse ? "right: 0" : "left: 0")};
+  }
 `
 
 const OtherSkills = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   flex: 1;
-  margin-left: 2em;
+
+  @media ${screens.laptop} {
+    align-items: flex-end;
+    margin-left: 2em;
+  }
 `
 
 const SkillHeader = styled.h2`
   margin: 0;
-  width: 80%;
+  width: 100%;
   color: ${colors.white};
+  font-size: 1.2em;
+
+  @media ${screens.laptop} {
+    width: 80%;
+    font-size: 1.5em;
+  }
 `
 
 const AdobeSkills = styled.div`
@@ -220,6 +295,7 @@ const AdobeSkills = styled.div`
   grid-template-columns: repeat(3, 50px);
   grid-template-rows: repeat(2, 50px);
   grid-gap: 16px;
+  margin: 1.5em 0;
 
   svg {
     transition: 0.2s cubic-bezier(0.19, 1, 0.22, 1);
@@ -228,11 +304,20 @@ const AdobeSkills = styled.div`
   svg:hover {
     filter: brightness(0.7);
   }
+
+  @media ${screens.laptop} {
+    margin: 0;
+  }
 `
 
 const Cameras = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 1.5em 0;
+
+  @media ${screens.laptop} {
+    margin: 0;
+  }
 `
 
 const Camera = styled.span`
@@ -244,23 +329,38 @@ const Languages = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  margin: 1.5em 0;
+
+  @media ${screens.laptop} {
+    margin: 0;
+  }
 `
 
 const Disclaimer = styled.span`
   color: ${colors.secondaryBlack};
-  font-size: 0.7em;
+  font-size: 0.6em;
+  margin: 1.5em 0;
+
+  @media ${screens.laptop} {
+    margin: 0;
+    font-size: 0.7em;
+  }
 `
 
 const MySkillsBackground = styled.h1`
   color: ${colors.white};
   position: absolute;
-  font-size: 15em;
+  font-size: 5em;
   top: 0.4em;
   left: -0.3em;
   z-index: 1;
   display: block;
   margin: 0;
   opacity: 0.03;
+
+  @media ${screens.laptop} {
+    font-size: 15em;
+  }
 `
 
 const ExperienceContainer = styled.div`
@@ -271,7 +371,11 @@ const ExperienceContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10.1vh 0;
+  padding: 10.1vh 1.5em;
+
+  @media ${screens.laptop} {
+    padding: 10.1vh 0;
+  }
 `
 
 const ExperienceHeader = styled.div`
@@ -282,7 +386,11 @@ const ExperienceHeader = styled.div`
 
 const ExperienceTitle = styled.h1`
   margin: 0;
-  font-size: 4em;
+  font-size: 2.5em;
+
+  @media ${screens.laptop} {
+    font-size: 4em;
+  }
 `
 
 const ExperienceSubtitle = styled.p`
@@ -300,9 +408,15 @@ const TimelineContainer = styled.div`
     background-color: ${colors.accent};
     content: "";
     position: absolute;
-    left: calc(50% - 2px);
+    left: calc(90% - 2px);
     width: 4px;
     height: 100%;
+  }
+
+  @media ${screens.laptop} {
+    &:after {
+      left: calc(50% - 2px);
+    }
   }
 `
 
@@ -312,17 +426,10 @@ const TimelineItem = styled.div`
   padding-right: 50px;
   position: relative;
   margin: 0.5em 0;
-  width: 50%;
+  width: 90%;
 
   &:nth-child(odd) {
-    align-self: flex-end;
-    justify-content: flex-start;
-    padding-left: 50px;
-    padding-right: 0;
-
     > div {
-      text-align: right;
-      align-items: flex-end;
       background-color: ${colors.secondaryWhite};
 
       h3 {
@@ -331,17 +438,37 @@ const TimelineItem = styled.div`
       p {
         color: ${colors.secondaryBlack};
       }
-      span {
-        right: auto;
-        left: -4.75em;
-      }
 
       &:after {
-        right: auto;
-        left: -7.5px;
-        box-shadow: 10px 10px 25px -5px rgba(0, 0, 0, 0.1),
-          10px 10px 10px -5px rgba(0, 0, 0, 0.1);
         background-color: ${colors.secondaryWhite};
+      }
+    }
+  }
+
+  @media ${screens.laptop} {
+    width: 50%;
+
+    &:nth-child(odd) {
+      align-self: flex-end;
+      justify-content: flex-start;
+      padding-left: 50px;
+      padding-right: 0;
+
+      > div {
+        text-align: right;
+        align-items: flex-end;
+
+        span {
+          right: auto;
+          left: -4.75em;
+        }
+
+        &:after {
+          right: auto;
+          left: -7.5px;
+          box-shadow: 10px 10px 25px -5px rgba(0, 0, 0, 0.1),
+            10px 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
       }
     }
   }
@@ -377,12 +504,21 @@ const TimelineItemContent = styled.div`
 
 const TimelineTitle = styled.h3`
   color: ${colors.white};
+  font-size: 1.2em;
+
+  @media ${screens.laptop} {
+    font-size: 1.3em;
+  }
 `
 
 const TimelineText = styled.p`
   color: ${colors.secondaryWhite};
   margin: 0;
-  font-size: 0.9em;
+  font-size: 0.8em;
+
+  @media ${screens.laptop} {
+    font-size: 0.9em;
+  }
 `
 
 const TimelineRectangle = styled.span`
@@ -396,6 +532,9 @@ const TimelineRectangle = styled.span`
   color: ${colors.white};
   font-family: "Open Sans";
   font-weight: 700;
+
+  @media ${screens.laptop} {
+  }
 `
 
 export default class about extends PureComponent {
