@@ -7,7 +7,6 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.17.1",
-    "gatsby-background-image": "^0.8.15",
     "gatsby-image": "^2.2.29",
     "gatsby-plugin-manifest": "^2.2.23",
     "gatsby-plugin-netlify-cache": "^1.2.0",
@@ -31,9 +30,7 @@
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.7.0",
-    "react-infinite-scroll-component": "^4.5.3",
     "react-map-gl": "^5.0.12",
-    "react-mapbox-gl": "^4.7.0",
     "react-popupbox": "^2.0.8",
     "react-tooltip": "^3.11.1",
     "react-typist": "^2.0.5",
