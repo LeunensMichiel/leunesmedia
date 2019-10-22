@@ -9,6 +9,7 @@ import Layout from "../components/layout"
 import Overlay from "../components/Framework/Overlay"
 import SEO from "../components/seo"
 import Button from "../components/Framework/Button"
+import screens from "../components/Framework/Screens"
 
 import Logo from "../images/svgs/logoblack.svg"
 import Chevron from "../images/svgs/right-chevron.svg"
@@ -48,10 +49,17 @@ const StyledLogo = styled(Logo)`
   fill: ${colors.white} !important;
 `
 const StyledSubheader = styled.p`
-  padding: 0.2em 0.66em;
+  font-size: 0.9em;
+  padding: 0.2em 0.5em;
   color: ${props => (props.inverted ? colors.white : colors.black)};
   background-color: ${props => (props.inverted ? colors.accent : colors.white)};
   margin-bottom: 0.4em;
+  text-align: right;
+
+  @media ${screens.laptop} {
+    font-size: 1em;
+    padding: 0.2em 0.66em;
+  }
 `
 
 const StyledAnchor = styled(Link)`
@@ -62,6 +70,7 @@ const StyledAnchor = styled(Link)`
   text-decoration: none;
   margin-top: 1em;
   transition: 0.2s cubic-bezier(0.19, 1, 0.22, 1) all;
+  font-size: 0.9em;
 
   &:hover,
   &:active {
@@ -79,15 +88,19 @@ const StyledAnchor = styled(Link)`
     height: 0.8em;
     width: 1em;
   }
+
+  @media ${screens.laptop} {
+    font-size: 1em;
+  }
 `
 
 const DownScroll = styled.div`
   position: absolute;
   bottom: 4em;
   left: 50%;
-  margin-left: -50vh;
+  margin-left: -50vw;
   right: 50%;
-  margin-right: -50vh;
+  margin-right: -50vw;
   z-index: 5;
   display: flex;
   flex-direction: column;
@@ -127,7 +140,7 @@ const MainSectionInfo = styled.div`
 
 const SectionHeader = styled.h1`
   color: ${colors.white};
-  font-size: 2.8em;
+  font-size: 1.5em;
   text-transform: uppercase;
 
   &:after {
@@ -135,9 +148,17 @@ const SectionHeader = styled.h1`
     display: block;
     margin: ${props => (props.left ? "0 auto 0 .5em" : "0 0.5em 0 auto")};
     width: 100%;
-    max-width: 230px;
+    max-width: 150px;
     padding-top: 0.5em;
     border-bottom: 2px solid ${colors.accent};
+  }
+
+  @media ${screens.laptop} {
+    font-size: 2.8em;
+
+    &:after {
+      max-width: 230px;
+    }
   }
 `
 
@@ -147,6 +168,11 @@ const SectionParagraph = styled.p`
   max-width: 500px;
   text-align: ${props => (props.left ? "left" : "right")};
   margin-bottom: 2em;
+  font-size: 0.8em;
+
+  @media ${screens.laptop} {
+    font-size: 1em;
+  }
 `
 
 export default class IndexPage extends PureComponent {

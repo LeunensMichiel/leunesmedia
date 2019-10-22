@@ -5,10 +5,12 @@ import styled from "styled-components"
 import colors from "../Framework/colors"
 
 import Hamburger from "../../images/svgs/menu.svg"
+import screens from "../Framework/Screens"
 
 const HamburgerIcon = styled(Hamburger)`
-  height: 3.3rem;
-  width: 4rem;
+  height: 2.5rem;
+  width: 3rem;
+
   cursor: pointer;
   transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   -webkit-backface-visibility: hidden;
@@ -41,13 +43,23 @@ const HamburgerIcon = styled(Hamburger)`
           : `${colors.secondaryBlack} !important`};
     }
   }
+
+  @media ${screens.laptop} {
+    height: 3.3rem;
+    width: 4rem;
+  }
 `
 
 const Header = styled.header`
-  top: 10vh;
-  left: 10vh;
+  top: 5vh;
+  left: 5vh;
   position: fixed;
   z-index: 99;
+
+  @media ${screens.laptop} {
+    top: 10vh;
+    left: 10vh;
+  }
 `
 
 const Toolbar = ({ isDark, hamburgerClickHandler }) => (

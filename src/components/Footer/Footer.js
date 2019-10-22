@@ -9,6 +9,7 @@ import { FaInstagram } from "react-icons/fa"
 import { FaGithub } from "react-icons/fa"
 import { FaYoutube } from "react-icons/fa"
 import { FaLinkedinIn } from "react-icons/fa"
+import screens from "../Framework/Screens"
 
 const FooterContainer = styled.footer`
   width: 100%;
@@ -19,6 +20,11 @@ const FooterContainer = styled.footer`
   justify-content: center;
   align-items: center;
   position: relative;
+  padding: 0 1.5em;
+
+  @media ${screens.laptop} {
+    padding: 0;
+  }
 `
 const TextContainer = styled.div`
   display: flex;
@@ -38,15 +44,24 @@ const FooterLine = styled.div`
 `
 
 const Logo = styled(LMLogo)`
-  width: 100%;
+  width: 80%;
   max-width: 330px;
   margin-bottom: 0.5em;
   fill: ${colors.white} !important;
+
+  @media ${screens.laptop} {
+    width: 100%;
+  }
 `
 
 const Copyright = styled.p`
   color: ${colors.secondaryBlack};
   margin: 0;
+  font-size: 0.9em;
+
+  @media ${screens.laptop} {
+    font-size: 1em;
+  }
 `
 
 const SocialsContainer = styled.div`
@@ -66,6 +81,7 @@ const LangContainer = styled.div`
 `
 
 const StyledSpan = styled.span`
+  font-size: 0.9em;
   border-bottom: 1px solid
     ${props =>
       props.active === "true" ? `${colors.secondaryBlack}` : "transparent"};
@@ -74,6 +90,10 @@ const StyledSpan = styled.span`
 
   &:hover {
     color: ${colors.secondaryWhite};
+  }
+
+  @media ${screens.laptop} {
+    font-size: 1em;
   }
 `
 const Footer = () => {

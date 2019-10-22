@@ -4,13 +4,14 @@ import styled from "styled-components"
 import colors from "../Framework/colors"
 
 import CrossIcon from "../../images/svgs/cross-out.svg"
+import screens from "../Framework/Screens"
 
 const Cross = styled(CrossIcon)`
   position: absolute;
   top: 1.66em;
   left: 1.66em;
-  height: 45px;
-  width: 45px;
+  height: 2.5rem;
+  width: 2.66rem;
   cursor: pointer;
   fill: ${colors.white} !important;
   transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
@@ -24,6 +25,11 @@ const Cross = styled(CrossIcon)`
   &:focus {
     transform: scale(0.95);
   }
+
+  @media ${screens.laptop} {
+    height: 3rem;
+    width: 3.5rem;
+  }
 `
 
 const Navigation = styled.nav`
@@ -34,6 +40,9 @@ const Navigation = styled.nav`
       ? " 0 14px 28px rgba(0, 0, 0, 0.33), 0 10px 10px rgba(0, 0, 0, 0.33)"
       : ""};
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   top: 0;
   left: 0;
   width: 70%;
@@ -43,18 +52,20 @@ const Navigation = styled.nav`
   transform: ${props =>
     props.show === "true" ? "translateX(0)" : "translateX(-100%)"};
   transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  overflow-y: auto;
 `
 const NavigationItems = styled.ul`
-  height: 100%;
+  width: 100%;
   list-style: none;
   margin: 0;
-  padding: 1.66em;
+  margin-top: 5.82em;
+  padding: 0 1.66em;
   display: flex;
   flex-direction: column;
   justify-content: center;
 `
 const NavigationItem = styled.li`
-  margin-bottom: 1.33em;
+  margin-bottom: ${props => (props.last ? "0" : "1.33em")};
   padding-bottom: 1.28em;
   border-bottom: ${props => (props.last ? "0" : "1px")} solid ${colors.white};
 
@@ -64,7 +75,7 @@ const NavigationItem = styled.li`
   }
 
   a {
-    font-size: 1.33em;
+    font-size: 1.1em;
     font-weight: 300;
     text-transform: uppercase;
     color: ${colors.secondaryWhite};
@@ -73,6 +84,10 @@ const NavigationItem = styled.li`
     padding-bottom: 1.28em;
     &.activeLink {
       color: ${colors.accent};
+    }
+
+    @media ${screens.laptop} {
+      font-size: 1.33em;
     }
   }
 `
@@ -84,11 +99,10 @@ const StyledLink = styled(Link)`
 
 const LangContainer = styled.div`
   display: flex;
-  position: absolute;
-  bottom: 1.66em;
   width: 100%;
   justify-content: center;
   color: ${colors.secondaryBlack};
+  margin-bottom: 1.66em;
 `
 
 const StyledSpan = styled.span`

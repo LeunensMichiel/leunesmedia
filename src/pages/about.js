@@ -92,9 +92,9 @@ const DownScroll = styled.div`
   position: absolute;
   bottom: 1em;
   left: 50%;
-  margin-left: -50vh;
+  margin-left: -50vw;
   right: 50%;
-  margin-right: -50vh;
+  margin-right: -50vw;
   z-index: 5;
   display: flex;
   flex-direction: column;
@@ -131,7 +131,6 @@ const SkillsContainer = styled.div`
   position: relative;
   background: ${colors.black};
   color: ${colors.white};
-  text-align: right;
   overflow: hidden;
 `
 
@@ -143,6 +142,7 @@ const SkillsInnerContainer = styled.div`
   justify-content: center;
   position: relative;
   z-index: 4;
+  text-align: right;
 `
 
 const Skills = styled.div`
