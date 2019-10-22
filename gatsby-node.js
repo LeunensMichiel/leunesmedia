@@ -5,6 +5,7 @@
  */
 
 // You can delete this file if you're not using it
+const ChildProcess = require("child_process")
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html") {
     actions.setWebpackConfig({
@@ -18,4 +19,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
       },
     })
   }
+}
+
+exports.onPostBuild = () => {
+  ChildProcess.execSync(
+    "ps aux | grep jest | grep -v grep | awk '{print $2}' | xargs kill"
+  )
 }
