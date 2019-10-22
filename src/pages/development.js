@@ -569,7 +569,6 @@ export default class development extends PureComponent {
   render() {
     const { data } = this.props
     const { start, played, typingDone } = this.state
-    console.log(data.gpImage.childImageSharp.fluid)
     return (
       <Layout>
         <SEO
