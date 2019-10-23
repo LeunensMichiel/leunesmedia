@@ -8,6 +8,7 @@ import Layout from "../components/layout"
 import colors from "../components/Framework/colors"
 import SEO from "../components/seo"
 import Switch from "../components/Framework/Switch"
+import screens from "../components/Framework/Screens"
 
 const FilmmakingContainer = styled.div`
   display: flex;
@@ -21,9 +22,15 @@ const Menu = styled.div`
   width: 100%;
   max-width: 1024px;
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  margin: 10.1vh 0;
+  margin: 20.2vh 0 10.1vh 0;
+
+  @media ${screens.laptop} {
+    flex-direction: row;
+    margin: 10.1vh 0;
+  }
 `
 
 const MenuItem = styled.a`
@@ -31,7 +38,6 @@ const MenuItem = styled.a`
   text-transform: uppercase;
   font-size: 2em;
   font-weight: 200;
-  margin-left: 1em;
   color: ${props =>
     props.active && props.isDark
       ? colors.secondaryWhite
@@ -47,17 +53,36 @@ const MenuItem = styled.a`
   &:hover {
     color: ${props => (props.isDark ? colors.secondaryWhite : colors.black)};
   }
+
+  @media ${screens.laptop} {
+    margin-left: 1em;
+  }
+`
+
+const StyledSwitch = styled.div`
+  position: absolute;
+  top: 5.5vh;
+  left: 15vh;
+
+  @media ${screens.laptop} {
+    position: static;
+  }
 `
 
 const ImageGrid = styled.div`
   display: grid;
-  grid-gap: 0;
-  grid-auto-flow: column;
-  justify-content: center;
-  height: 225px;
-  /* align-content: end; */
-  width: 100%;
+  grid-gap: 0.66em;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 225px;
   margin-bottom: 10.1vh;
+  padding: 0 1.5em;
+  width: 100%;
+  max-width: 880px;
+
+  @media ${screens.laptop} {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: dense;
+  }
 `
 
 const GridItem = styled.div`
@@ -69,9 +94,10 @@ const GridItem = styled.div`
   overflow: hidden;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   opacity: ${props => (props.isSelected ? "1" : ".33")};
   backface-visibility: hidden;
+  justify-self: center;
 `
 
 const VidContainer = styled.div`
@@ -147,11 +173,13 @@ export default class filmmaking extends PureComponent {
             >
               other
             </MenuItem>
-            <Switch
-              lastLeft={true}
-              isOn={checked}
-              handleToggle={() => this.onChangeSwitch(!checked)}
-            />
+            <StyledSwitch>
+              <Switch
+                lastLeft={true}
+                isOn={checked}
+                handleToggle={() => this.onChangeSwitch(!checked)}
+              />
+            </StyledSwitch>
           </Menu>
           <VidContainer>
             <div className="aspect">
@@ -172,7 +200,7 @@ export default class filmmaking extends PureComponent {
               ></iframe>
             </div>
           </VidContainer>
-          <ImageGrid>
+          <ImageGrid size={finalImages.length}>
             {finalImages.map((image, i) => (
               <GridItem
                 key={image.node.childImageSharp.fixed.src}

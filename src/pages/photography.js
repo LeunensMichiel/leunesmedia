@@ -32,7 +32,6 @@ const MenuItem = styled.a`
   text-transform: uppercase;
   font-size: 2em;
   font-weight: 200;
-  margin-left: 0;
   color: ${props => (props.active ? colors.black : colors.secondaryBlack)};
   transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   -webkit-backface-visibility: hidden;

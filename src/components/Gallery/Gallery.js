@@ -15,6 +15,7 @@ const ImageGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-flow: dense;
   grid-gap: 0.66em;
+  
 
   @media ${screens.laptop} {
     padding: 0;

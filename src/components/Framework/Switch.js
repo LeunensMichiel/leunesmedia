@@ -3,11 +3,15 @@ import styled from "styled-components"
 
 import colors from "./colors"
 
+const SwitchContainer = styled.div`
+  margin-left: ${props => (props.lastLeft ? "2em" : "0")};
+`
+
 const StyledSwitch = styled.input`
   height: 0;
   width: 0;
   visibility: hidden;
-  margin-left: ${props => (props.lastLeft ? "2em" : "0")};
+  display: flex;
 
   &:checked + label span {
     left: calc(100% - 2px);
@@ -55,18 +59,17 @@ const SwitchButton = styled.span`
 
 const Switch = ({ lastLeft, isOn, handleToggle }) => {
   return (
-    <>
+    <SwitchContainer lastLeft={lastLeft}>
       <StyledSwitch
         checked={isOn}
         onChange={handleToggle}
-        lastLeft={lastLeft}
         id={`react-switch-new`}
         type="checkbox"
       />
       <SwitchLabel htmlFor={`react-switch-new`}>
         <SwitchButton />
       </SwitchLabel>
-    </>
+    </SwitchContainer>
   )
 }
 
