@@ -18,6 +18,7 @@ import Android from "../images/svgs/android.svg"
 import Apple from "../images/svgs/apple.svg"
 import Windows from "../images/svgs/windows.svg"
 import Mindfulness from "../images/svgs/logoMindfulness.svg"
+import screens from "../components/Framework/Screens"
 
 const TypeContainer = styled.div`
   display: flex;
@@ -26,11 +27,15 @@ const TypeContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: 5em;
+  font-size: 1.5em;
   font-family: "Inconsolata", "Montserrat", "sans-serif";
   text-transform: uppercase;
   position: relative;
   text-align: center;
+
+  @media ${screens.laptop} {
+    font-size: 5em;
+  }
 `
 const DownScroll = styled.div`
   color: ${colors.black};
@@ -63,6 +68,12 @@ const OrganicContainer = styled.div`
   flex-direction: column;
   text-align: center;
   margin: 0 auto;
+  padding: 0 1.5em;
+  overflow: hidden;
+
+  @media ${screens.laptop} {
+    padding: 0;
+  }
 `
 
 const OrganicText = styled.div`
@@ -86,25 +97,39 @@ const OrganicText = styled.div`
 const StyledCoffee = styled(Coffee)`
   position: absolute;
   top: 0;
-  right: 0;
+  right: -1.5em;
   z-index: 4;
-  height: 100%;
+  height: 80%;
   opacity: 0.3;
   transform: rotate(25deg);
+
+  @media ${screens.laptop} {
+    right: 0;
+    height: 100%;
+  }
 `
 
 const Header = styled.h1`
   position: relative;
-  font-size: 4em;
+  font-size: 1.5em;
   line-height: 1.6;
   margin: 0;
   z-index: 50;
+
+  @media ${screens.laptop} {
+    font-size: 4em;
+  }
 `
 
 const AboveHeader = styled.span`
   position: relative;
   color: ${colors.secondaryBlack};
   z-index: 50;
+  font-size: 0.8em;
+
+  @media ${screens.laptop} {
+    font-size: 1em;
+  }
 `
 
 const OtherStuff = styled.div``
@@ -112,7 +137,13 @@ const OtherStuff = styled.div``
 const OtherHeader = styled.h3`
   color: ${colors.secondaryBlack};
   font-weight: 300;
-  margin: 0;
+  margin: 1.5em 0;
+  font-size: 1em;
+
+  @media ${screens.laptop} {
+    margin: 0;
+    font-size: 1.3em;
+  }
 `
 
 const OtherSubHeader = styled.span`
@@ -122,42 +153,65 @@ const OtherSubHeader = styled.span`
 
 const TwallieContainer = styled.div`
   width: 100%;
-  height: 40vh;
+  height: 60vh;
   background: ${colors.black};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   margin: 20vh 0 30vh 0;
+
+  @media ${screens.laptop} {
+    height: 40vh;
+  }
 `
 
 const TwallieSecondContainer = styled.div`
   width: 100%;
-  max-width: 1024px;
+  max-width: 90vw;
   margin: 0 auto;
-  height: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  position: relative;
+  position: absolute;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2),
+    0 10px 10px -5px rgba(0, 0, 0, 0.1);
+
+  @media ${screens.laptop} {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+    max-width: 1024px;
+  }
 `
 
 const TwallieSiteImg = styled(Img)`
-  width: 75%;
-  height: 130%;
-  margin-left: auto;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2),
-    0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+
+  @media ${screens.laptop} {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2),
+      0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  }
 `
 
 const TwallieCard = styled.div`
   width: 100%;
-  max-width: 350px;
-  height: 150%;
+  height: 350px;
   padding: 1em;
   background: #37383b;
-  position: absolute;
-  left: 0;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5),
-    0 10px 10px -5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+
+  @media ${screens.laptop} {
+    max-width: 350px;
+    position: absolute;
+    left: 0;
+    height: 110%;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5),
+      0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  }
 `
 
 const UpperCard = styled.div`
@@ -278,10 +332,15 @@ const ArtistHuntContainer = styled.div`
   justify-content: space-evenly;
   width: 100%;
   max-width: 1024px;
-  height: 100vh;
-  margin: 0 auto;
+  min-height: 100vh;
   position: relative;
+  margin: 0 auto;
+  padding: 0 1.5em;
   overflow: hidden;
+
+  @media ${screens.laptop} {
+    padding: 0;
+  }
 `
 
 const AHHeader = styled.div`
@@ -292,13 +351,20 @@ const AHHeader = styled.div`
 `
 
 const AHTitle = styled.h1`
-  font-size: 4em;
+  font-size: 3.5em;
   margin: 0 0 0.4em 0;
+
+  @media ${screens.laptop} {
+    font-size: 4em;
+  }
 `
 
 const AHSubtitle = styled.p`
   margin: 0;
-  width: 55%;
+
+  @media ${screens.laptop} {
+    width: 55%;
+  }
 `
 
 const AHBody = styled.div`
@@ -309,34 +375,59 @@ const AHBody = styled.div`
 `
 
 const AHBodyTitle = styled.h2`
-  font-size: 2em;
-  width: 50%;
-  margin: 0 0 0.5em 0;
+  font-size: 1.8em;
+  margin: 1em 0 0.5em 0;
+
+  @media ${screens.laptop} {
+    font-size: 2em;
+    width: 50%;
+    margin: 0 0 0.5em 0;
+  }
 `
 
 const AHBodyDescription = styled.p`
-  margin: 0;
   color: ${colors.secondaryBlack};
-  font-size: 0.9em;
-  width: 50%;
+  margin: 0;
+  font-size: 0.8em;
+
+  @media ${screens.laptop} {
+    margin: 0;
+    font-size: 0.9em;
+    width: 50%;
+  }
 `
 
 const AvailableOn = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-top: 1.5em;
+  align-self: center;
+
+  @media ${screens.laptop} {
+    margin-top: 0;
+    align-self: inherit;
+  }
 `
 
 const AvailableText = styled.div`
   color: ${props => (props.accent ? props.accent : colors.secondaryBlack)};
-  font-size: 0.7em;
+  font-size: 0.6em;
   text-align: right;
   display: flex;
   flex-direction: column;
   margin-right: 1em;
 
   span {
+    font-size: 0.5em;
+  }
+
+  @media ${screens.laptop} {
     font-size: 0.6em;
+
+    span {
+      font-size: 0.6em;
+    }
   }
 `
 
@@ -361,15 +452,24 @@ const WindowsLogo = styled(Windows)`
 `
 
 const ArtistHuntImage = styled.div`
-  position: absolute;
-  bottom: -16%;
-  right: 0;
-  width: 30%;
+  width: 100%;
+  height: 50vh;
+  margin-top: 1.5em;
+
+  @media ${screens.laptop} {
+    position: absolute;
+    bottom: -16%;
+    right: 0;
+    width: 30%;
+    height: auto;
+    margin-top: initial;
+  }
 `
 
 const MindFulnessContainer = styled.div`
   background: ${colors.secondaryWhite};
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -377,7 +477,12 @@ const MindFulnessContainer = styled.div`
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  padding: 20vh 0;
+  padding: 20.2vh 1.5em 10.1vh 1.5em;
+
+  @media ${screens.laptop} {
+    flex-direction: row;
+    padding: 20.2vh 0;
+  }
 `
 
 const MindFulnessTextContainer = styled.div`
@@ -399,13 +504,23 @@ const MFHeader = styled.div`
 `
 
 const MFTitle = styled.h1`
-  font-size: 4em;
+  font-size: 2.2em;
   margin: 0 0 0.4em 0;
+  @media ${screens.laptop} {
+    font-size: 4em;
+  }
 `
 
 const MFDescription = styled.p`
   margin: 0;
-  width: 55%;
+  font-size: 0.9em;
+  text-align: justify;
+
+  @media ${screens.laptop} {
+    width: 55%;
+    font-size: 1em;
+    text-align: left;
+  }
 `
 
 const MFBody = styled.div`
@@ -418,52 +533,83 @@ const MFBody = styled.div`
 `
 
 const MFBodyTitle = styled.h2`
-  font-size: 2em;
-  width: 70%;
+  font-size: 1.5em;
   margin: 0 0 0.5em 0;
+
+  @media ${screens.laptop} {
+    font-size: 2em;
+    width: 70%;
+  }
 `
 
 const MFBodyDescription = styled.p`
   margin: 0;
   color: ${colors.secondaryBlack};
   font-size: 0.9em;
-  width: 50%;
+  text-align: justify;
+
+  @media ${screens.laptop} {
+    font-size: 1em;
+    text-align: left;
+  }
 `
 
 const MindFulnessImage = styled.div`
-  width: 20%;
-  margin-left: 20%;
-  margin-right: 5%;
+  width: 80%;
+  margin-top: 1.5em;
+
+  @media ${screens.laptop} {
+    width: 20%;
+    margin-left: 20%;
+    margin-right: 5%;
+  }
 `
 
 const MindfulLogo = styled(Mindfulness)`
   width: 50%;
   height: auto;
   position: absolute;
-  top: -10%;
+  top: -5%;
   left: 0;
   opacity: 0.33;
   z-index: 1;
+
+  @media ${screens.laptop} {
+    top: -10%;
+  }
 `
 
 const GhenterpriseContainer = styled.div`
   background: #feed57;
   width: 100%;
-  min-height: 100vh;
   position: relative;
   overflow: hidden;
-  padding: 10vh 0;
+  padding: 10.1vh 1.5em;
   display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+
+  @media ${screens.laptop} {
+    min-height: 100vh;
+    padding: 10.1vh 0;
+    flex-direction: row;
+    justify-content: stretch;
+    min-height: 100vh;
+  }
 `
 
 const GhenterpriseInnerContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
+
+  @media ${screens.laptop} {
+    align-items: flex-end;
+  }
 `
 
 const GPHeader = styled.div`
@@ -471,26 +617,48 @@ const GPHeader = styled.div`
   flex-direction: column;
   align-content: center;
   justify-content: flex-start;
-  margin-bottom: 2em;
-  width: 55%;
+  margin-top: 1.5em;
+
+  @media ${screens.laptop} {
+    margin-bottom: 2em;
+    margin-top: 0;
+    width: 55%;
+  }
 `
 
 const GPTitle = styled.h1`
-  font-size: 4em;
+  font-size: 2em;
   margin: 0 0 0.4em 0;
   text-align: right;
+
+  @media ${screens.laptop} {
+    font-size: 4em;
+  }
 `
 
 const GPDescription = styled.p`
-  margin: 0;
+  margin: 0 0 0 auto;
   text-align: right;
+  font-size: 0.8em;
+  width: 90%;
+
+  @media ${screens.laptop} {
+    font-size: 1em;
+    width: 100%;
+  }
 `
 
 const GhenterpriseImage = styled.div`
-  width: 45%;
-  position: absolute;
-  bottom: -5%;
-  left: 10%;
+  width: 100%;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.1);
+
+  @media ${screens.laptop} {
+    width: 45%;
+    position: absolute;
+    bottom: -5%;
+    left: 10%;
+  }
 `
 
 const MorrocoCard = styled.div`
@@ -624,8 +792,7 @@ export default class development extends PureComponent {
                     c * (-Math.pow(2, (-10 * t) / d) + 1) + b
                   }
                 />
-                made out
-                <br /> of organic code.
+                made of organic code.
               </Header>
             </OrganicText>
             <OtherStuff>
