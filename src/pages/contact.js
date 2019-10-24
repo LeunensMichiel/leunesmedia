@@ -313,7 +313,7 @@ export default class contact extends PureComponent {
               <input name="bot-field" style={{ display: "none" }} />
               <FirstColumn>
                 <InputContainer>
-                  <StyledLabel for="firstName">
+                  <StyledLabel htmlFor="firstName">
                     First Name<sup>*</sup>
                   </StyledLabel>
                   <StyledInput
@@ -325,8 +325,8 @@ export default class contact extends PureComponent {
                   />
                   <div className="bar" />
                 </InputContainer>
-                <InputContainer for="lastName">
-                  <StyledLabel>
+                <InputContainer>
+                  <StyledLabel htmlFor="lastName">
                     Last Name<sup>*</sup>
                   </StyledLabel>
                   <StyledInput
@@ -339,7 +339,7 @@ export default class contact extends PureComponent {
                   <div className="bar" />
                 </InputContainer>
                 <InputContainer>
-                  <StyledLabel for="email">
+                  <StyledLabel htmlFor="email">
                     Email<sup>*</sup>
                   </StyledLabel>
                   <StyledInput
@@ -352,7 +352,7 @@ export default class contact extends PureComponent {
                   <div className="bar" />
                 </InputContainer>
                 <InputContainer>
-                  <StyledLabel for="phone">Phone</StyledLabel>
+                  <StyledLabel htmlFor="phone">Phone</StyledLabel>
                   <StyledInput
                     type="tel"
                     placeholder="Enter your phone number"
@@ -361,8 +361,8 @@ export default class contact extends PureComponent {
                   />
                   <div className="bar" />
                 </InputContainer>
-                <InputContainer for="subject">
-                  <StyledLabel>
+                <InputContainer>
+                  <StyledLabel htmlFor="subject">
                     Subject<sup>*</sup>
                   </StyledLabel>
                   <StyledInput
@@ -377,7 +377,7 @@ export default class contact extends PureComponent {
               </FirstColumn>
               <SecondColumn>
                 <InputContainer className="textareaContainer">
-                  <StyledLabel for="message">
+                  <StyledLabel htmlFor="message">
                     Message<sup>*</sup>
                   </StyledLabel>
                   <StyledTextbox

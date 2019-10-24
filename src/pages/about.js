@@ -298,6 +298,7 @@ const AdobeSkills = styled.div`
   margin: 1.5em 0;
 
   svg {
+    width: 100%;
     transition: 0.2s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
