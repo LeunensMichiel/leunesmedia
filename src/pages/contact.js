@@ -14,6 +14,7 @@ import Logo from "../images/svgs/logoblack.svg"
 import Pin from "../images/svgs/marker-15.svg"
 
 import "mapbox-gl/dist/mapbox-gl.css"
+import screens from "../components/Framework/Screens"
 
 const ContactContainer = styled.div`
   width: 100%;
@@ -34,15 +35,21 @@ const ContactCard = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   width: 95%;
-  height: 66vh;
+  min-height: 60vh;
   margin-right: auto;
-
+  margin-left: auto;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 25;
   background: ${colors.white};
-  padding: 2.5em;
+  padding: 1.5em;
+
+  @media ${screens.laptop} {
+    min-height: 60vh;
+    margin-left: unset;
+    padding: 2.5em;
+  }
 `
 
 const ContactAccent = styled.div`
@@ -50,30 +57,49 @@ const ContactAccent = styled.div`
   height: 250px;
   background: ${colors.accent};
   position: absolute;
-  top: -2.5%;
-  right: 2.5%;
+  top: -10px;
+  right: 0;
   z-index: 1;
+
+  @media ${screens.laptop} {
+    top: -2.5%;
+    right: 2.5%;
+  }
 `
 
 const CardHeader = styled.h1`
   margin: 0;
-  font-size: 4em;
+  font-size: 2.5em;
   width: 100%;
+
+  @media ${screens.laptop} {
+    font-size: 4em;
+  }
 `
 
 const Information = styled.div`
   margin-top: 5em;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   width: 100%;
-  align-items: flex-end;
+
+  @media ${screens.laptop} {
+    flex-direction: row;
+  }
 `
 
 const InformationBlock = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   color: ${colors.secondaryBlack};
+  margin: 0.5em 0;
+
+  @media ${screens.laptop} {
+    align-items: flex-start;
+  }
 `
 
 const InformationTitle = styled.p`
@@ -96,10 +122,15 @@ const Form = styled.form`
   margin: 0;
   margin-top: 2em;
   width: 100%;
-  height: 100%;
   display: flex;
+  flex-grow: 1;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: stretch;
+
+  @media ${screens.laptop} {
+    flex-direction: row;
+  }
 `
 
 const FirstColumn = styled.div`
@@ -109,6 +140,10 @@ const FirstColumn = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   margin-right: 1em;
+
+  @media ${screens.laptop} {
+    margin-right: 1em;
+  }
 `
 
 const SecondColumn = styled.div`
@@ -117,7 +152,10 @@ const SecondColumn = styled.div`
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
-  margin-left: 1em;
+
+  @media ${screens.laptop} {
+    margin-left: 1em;
+  }
 `
 
 const InputContainer = styled.div`
@@ -127,9 +165,14 @@ const InputContainer = styled.div`
   align-items: stretch;
   justify-content: flex-start;
   position: relative;
+  margin-bottom: 1em;
 
   &.textareaContainer {
     height: 100%;
+  }
+
+  @media ${screens.laptop} {
+    margin-bottom: 1em;
   }
 `
 
@@ -149,7 +192,6 @@ const StyledInput = styled.input`
   color: ${colors.secondaryBlack};
   border-bottom: 2px solid ${colors.secondaryBlack};
   z-index: 4;
-
   & + .bar {
     display: block;
     height: 2px;
@@ -169,7 +211,7 @@ const StyledInput = styled.input`
 
 const StyledButton = styled.button`
   cursor: pointer;
-  margin-top: 40px;
+  margin-top: 38px;
   color: ${colors.accent};
   text-decoration: none;
   font-family: "Open Sans";
@@ -194,7 +236,7 @@ const StyledButton = styled.button`
 
 const StyledTextbox = styled.textarea`
   width: 100%;
-  height: 100%;
+  height: 300px;
   padding: 0.33em 0;
   border: none;
   color: ${colors.secondaryBlack};
@@ -216,6 +258,10 @@ const StyledTextbox = styled.textarea`
 
   &:focus + .bar {
     width: 100%;
+  }
+
+  @media ${screens.laptop} {
+    height: 100%;
   }
 `
 

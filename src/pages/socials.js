@@ -12,21 +12,33 @@ import { FaInstagram } from "react-icons/fa"
 import { FaGithub } from "react-icons/fa"
 import { FaYoutube } from "react-icons/fa"
 import { FaLinkedinIn } from "react-icons/fa"
+import screens from "../components/Framework/Screens"
 
 const SocialsContainer = styled.div`
   width: 100%;
   max-width: 1024px;
-  margin: 20.2vh auto;
+  margin: 20.2vh auto 10.1vh auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media ${screens.tablet} {
+    margin: 20.2vh auto;
+  }
 `
 
 const StyledP = styled.p`
   margin-bottom: 0;
   color: ${colors.secondaryBlack};
   text-align: center;
+  font-size: 0.8em;
+  padding: 0 1.5em;
+
+  @media ${screens.tablet} {
+    font-size: 1em;
+    padding: 0;
+  }
 `
 
 const SocialIconsContainer = styled.div`
@@ -42,7 +54,11 @@ const ToolTipText = styled.div`
   color: ${colors.white};
   font-family: "Open Sans";
   font-weight: 700;
-  font-size: 1em;
+  font-size: 0.9em;
+
+  @media ${screens.tablet} {
+    font-size: 1em;
+  }
 `
 
 export default class soials extends PureComponent {
