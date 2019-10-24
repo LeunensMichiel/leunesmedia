@@ -663,49 +663,76 @@ const GhenterpriseImage = styled.div`
 
 const MorrocoCard = styled.div`
   width: 100%;
-  max-width: 320px;
-  height: 66%;
-  padding: 1em 0.5em;
+  height: 350px;
+  padding: 1em;
   background: #37383b;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5),
-    0 10px 10px -5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  position: absolute;
-  right: 0;
-  bottom: -20px;
+  position: relative;
   z-index: 3;
+
+  @media ${screens.laptop} {
+    max-width: 350px;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    height: 66%;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5),
+      0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  }
 `
 
 const MoroccoContainer = styled.div`
   width: 100%;
   max-width: 1024px;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
+  align-items: center;
   margin: 0 auto;
-  padding: 10vh 0;
+
+  @media ${screens.laptop} {
+    min-height: 100vh;
+    padding: 10.1vh 0 20.2vh 0;
+    align-items: stretch;
+  }
 `
 
 const MoroccoInnerContainer = styled.div`
   width: 100%;
+  max-width: 90vw;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 10.1vh auto;
   position: relative;
-`
-
-const MoroccoImage = styled.div`
-  width: 80%;
-  position: absolute;
-  left: 0;
-  height: auto;
   z-index: 2;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5),
     0 10px 10px -5px rgba(0, 0, 0, 0.1);
 
+  @media ${screens.laptop} {
+    flex-direction: row;
+    margin: 0 auto;
+    box-shadow: none;
+  }
+`
+
+const MoroccoImage = styled.div`
+  width: 100%;
+  z-index: 2;
+
   .gatsby-image-wrapper {
     z-index: 2;
+  }
+
+  @media ${screens.laptop} {
+    position: absolute;
+    left: 0;
+    height: auto;
+    width: 80%;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5),
+      0 10px 10px -5px rgba(0, 0, 0, 0.1);
   }
 `
 
@@ -714,9 +741,14 @@ const MoroccoBG = styled.div`
   height: 200px;
   background: ${colors.accent};
   position: absolute;
-  ${props => (props.left ? "left: -25px" : "right: -25px")};
-  ${props => (props.left ? "bottom: -25px" : "top: -25px")};
+  ${props => (props.left ? "left: -10px" : "right: -10px")};
+  ${props => (props.left ? "bottom: -10px" : "top: -10px")};
   z-index: 1;
+
+  @media ${screens.laptop} {
+    ${props => (props.left ? "left: -25px" : "right: -25px")};
+    ${props => (props.left ? "bottom: -25px" : "top: -25px")};
+  }
 `
 
 export default class development extends PureComponent {
