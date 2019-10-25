@@ -49,14 +49,10 @@ collections:
       preview: true
     fields:
       - { label: "Title", name: "videoTitle", widget: "string" }
-      - label: 'Thumbnail'
-            name: 'thumbnail'
-            widget: 'image'
-            media_library:
-              config:
-                multiple: false
-      - {
-          label: 'Youtube URL',
-          name: 'youtubeUrl',
-          widget: 'string',
-        }
+      - label: "Thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        media_library:
+          config:
+            multiple: false
+      - { label: "Youtube URL", name: "youtubeUrl", widget: "string" }
