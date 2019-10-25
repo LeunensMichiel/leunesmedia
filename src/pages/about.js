@@ -32,6 +32,7 @@ const AboutContainer = styled.div`
     flex-direction: row;
     min-height: 85vh;
     padding: 20.2vh 0;
+    justify-content: center;
   }
 `
 
@@ -121,10 +122,6 @@ const SocialSkill = styled.span`
 const DownScroll = styled.div`
   position: absolute;
   bottom: 1em;
-  left: 50%;
-  margin-left: -50vw;
-  right: 50%;
-  margin-right: -50vw;
   z-index: 5;
   display: flex;
   flex-direction: column;
@@ -135,6 +132,7 @@ const DownScroll = styled.div`
   font-size: 0.66em;
   letter-spacing: 2px;
   cursor: pointer;
+  align-self: center;
 
   span {
     color: ${colors.secondaryBlack};

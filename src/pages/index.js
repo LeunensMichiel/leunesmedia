@@ -19,6 +19,7 @@ const Jumbotron = styled.div`
   position: relative;
   min-width: 100%;
   min-height: 98vh;
+  justify-content: center;
 `
 
 const MainImage = styled.div`
@@ -97,10 +98,6 @@ const StyledAnchor = styled(Link)`
 const DownScroll = styled.div`
   position: absolute;
   bottom: 4em;
-  left: 50%;
-  margin-left: -50vw;
-  right: 50%;
-  margin-right: -50vw;
   z-index: 5;
   display: flex;
   flex-direction: column;

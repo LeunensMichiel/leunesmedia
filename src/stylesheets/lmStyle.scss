@@ -10,10 +10,8 @@ $secondaryWhite: #e8e8e8;
 $secondaryBlack: #656565;
 
 //  FONTS   //
-$baseFont: 1.2em/1.5 "Montserrat",
-sans-serif;
-$headerFont: 4.5em/1.5 bold "Open Sans",
-sans-serif;
+$baseFont: 1.2em/1.5 "Montserrat", sans-serif;
+$headerFont: 4.5em/1.5 bold "Open Sans", sans-serif;
 
 ::selection {
   background-color: $accent;
@@ -74,6 +72,7 @@ body {
   box-shadow: none !important;
   background: none !important;
   pointer-events: none;
+  max-width: 95vw !important;
 
   .popupbox-content {
     padding: 0 !important;

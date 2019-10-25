@@ -62,14 +62,18 @@ const OrganicContainer = styled.div`
   display: flex;
   width: 100%;
   max-width: 1024px;
-  min-height: 90vh;
-  justify-content: space-evenly;
+  min-height: 100vh;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
   margin: 0 auto;
   padding: 0 1.5em;
   overflow: hidden;
+
+  @media ${screens.mobileM} {
+    min-height: 80vh;
+  }
 
   @media ${screens.laptop} {
     padding: 0;
@@ -116,6 +120,10 @@ const Header = styled.h1`
   margin: 0;
   z-index: 50;
 
+  @media ${screens.tablet} {
+    font-size: 3em;
+  }
+
   @media ${screens.laptop} {
     font-size: 4em;
   }
@@ -127,12 +135,21 @@ const AboveHeader = styled.span`
   z-index: 50;
   font-size: 0.8em;
 
+  @media ${screens.tablet} {
+    font-size: 0.9em;
+  }
+
   @media ${screens.laptop} {
     font-size: 1em;
   }
 `
 
-const OtherStuff = styled.div``
+const OtherStuff = styled.div`
+  @media ${screens.mobileM} {
+    margin: 2.5em 0;
+  }
+  margin: 3.5em 0;
+`
 
 const OtherHeader = styled.h3`
   color: ${colors.secondaryBlack};
@@ -140,7 +157,7 @@ const OtherHeader = styled.h3`
   margin: 1.5em 0;
   font-size: 1em;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     margin: 0;
     font-size: 1.3em;
   }
@@ -159,10 +176,10 @@ const TwallieContainer = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  margin: 20.2vh 0 30.3vh 0;
+  margin: 10.1vh 0 20.2vh 0;
 
   @media ${screens.laptop} {
-    margin: 20.2vh 0;
+    margin: 10.1vh 0;
     height: 40vh;
   }
 `

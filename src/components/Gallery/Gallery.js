@@ -15,7 +15,6 @@ const ImageGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-flow: dense;
   grid-gap: 0.66em;
-  
 
   @media ${screens.laptop} {
     padding: 0;
@@ -30,7 +29,7 @@ const GridItem = styled.div`
   }
 
   @media ${screens.tablet} {
-    &:nth-child(4n - 1) {
+    &:nth-child(4n) {
       grid-column: span 2;
       grid-row: span 2;
     }
@@ -42,6 +41,14 @@ const GridItem = styled.div`
     height: 100%;
     object-fit: cover;
   }
+`
+
+const Soon = styled.h2`
+  text-transform: uppercase;
+  font-weight: 300;
+  margin: 10.1vh auto;
+  display: block;
+  text-align: center;
 `
 
 export default class Gallery extends PureComponent {
@@ -94,6 +101,7 @@ export default class Gallery extends PureComponent {
             </GridItem>
           ))}
         </ImageGrid>
+        {images.length === 0 && <Soon>More soon!</Soon>}
       </>
     )
   }

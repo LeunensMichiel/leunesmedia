@@ -79,7 +79,7 @@ const ImageGrid = styled.div`
   width: 100%;
   max-width: 880px;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     grid-gap: 0.66em;
     grid-template-columns: 1fr 1fr;
     grid-auto-flow: dense;
@@ -93,7 +93,7 @@ const GridItem = styled.div`
     filter: brightness(0.7);
   }
   overflow: hidden;
-  height: 100%;
+  width: 100%;
   display: flex;
   align-items: stretch;
   opacity: ${props => (props.isSelected ? "1" : ".33")};
@@ -212,7 +212,6 @@ export default class filmmaking extends PureComponent {
                 onClick={() => this.onChangeVideo(i)}
                 isSelected={selectedVideo === i}
               >
-                {console.log(video)}
                 <Img
                   alt={video.node.frontmatter.videoTitle}
                   fixed={video.node.frontmatter.thumbnail.childImageSharp.fixed}
@@ -232,6 +231,7 @@ export const query = graphql`
   query {
     videos: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/videos/" } }
+      sort: { order: DESC, fields: frontmatter___youtubeUrl }
     ) {
       edges {
         node {
