@@ -140,10 +140,9 @@ export default class filmmaking extends PureComponent {
   render() {
     const { data } = this.props
     const { type, checked, selectedVideo } = this.state
-    const finalImages = _.filter(data.images.edges, img => {
-      return img.node.relativeDirectory.includes(type)
+    const videos = _.filter(data.videos.edges, video => {
+      return video.node.frontmatter.category.includes(type)
     })
-    const urls = ["jT7KIXLajjY"]
 
     return (
       <Layout>
@@ -194,7 +193,7 @@ export default class filmmaking extends PureComponent {
                   width: "100%",
                   height: "100%",
                 }}
-                src={`https://www.youtube.com/embed/${urls[selectedVideo]}?enablejsapi=1`}
+                src={`https://www.youtube.com/embed/${videos[selectedVideo].node.frontmatter.youtubeUrl}?enablejsapi=1`}
                 frameBorder="0"
                 allowFullScreen
                 title="Player"
@@ -202,18 +201,18 @@ export default class filmmaking extends PureComponent {
             </div>
           </VidContainer>
           <ImageGrid>
-            {finalImages.map((image, i) => (
+            {videos.map((video, i) => (
               <GridItem
-                key={image.node.childImageSharp.fixed.src}
+                key={video.node.frontmatter.youtubeUrl}
                 onClick={() => this.onChangeVideo(i)}
                 isSelected={selectedVideo === i}
               >
-                <Img
+                {/* <Img
                   alt={image.node.childImageSharp.fixed.originalName}
                   fixed={image.node.childImageSharp.fixed}
                   objectFit="cover"
                   objectPosition="50% 50%"
-                />
+                /> */}
               </GridItem>
             ))}
           </ImageGrid>
@@ -224,18 +223,17 @@ export default class filmmaking extends PureComponent {
 }
 export const query = graphql`
   query {
-    images: allFile(
-      filter: { relativeDirectory: { glob: "video/*" } }
-      sort: { fields: name }
+    videos: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/videos/" } }
     ) {
       edges {
         node {
-          childImageSharp {
-            fixed(quality: 100) {
-              ...GatsbyImageSharpFixed_withWebp_tracedSVG
-            }
+          frontmatter {
+            youtubeUrl
+            videoTitle
+            category
+            thumbnail
           }
-          relativeDirectory
         }
       }
     }
