@@ -6,9 +6,10 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - label: "Skill"
+  - label: "Skills"
     name: "skill"
     folder: "skills"
+    identifier_field: skillName
     create: true
     editor:
       preview: true
@@ -22,9 +23,10 @@ collections:
           min: 0,
           max: 100,
         }
-  - label: "Timeline Item"
+  - label: "Timeline Items"
     name: "timelineItem"
     folder: "timelineItems"
+    identifier_field: timelineTitle
     create: true
     editor:
       preview: true
@@ -37,4 +39,24 @@ collections:
           widget: "date",
           default: "",
           format: "YYYY",
+        }
+  - label: "Videos"
+    name: "video"
+    folder: "videos"
+    identifier_field: videoTitle
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "videoTitle", widget: "string" }
+      - label: 'Thumbnail'
+            name: 'thumbnail'
+            widget: 'image'
+            media_library:
+              config:
+                multiple: false
+      - {
+          label: 'Youtube URL',
+          name: 'youtubeUrl',
+          widget: 'string',
         }
