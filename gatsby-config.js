@@ -28,6 +28,13 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/markdown`,
+        name: `markdown`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -55,6 +62,7 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-netlify-cms`,

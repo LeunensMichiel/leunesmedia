@@ -599,27 +599,15 @@ export default class about extends PureComponent {
           <MySkillsBackground>My skills.</MySkillsBackground>
           <SkillsInnerContainer>
             <Skills>
-              <Skill>
-                <span>JavaScript</span>
-                <Bar>
-                  <GrayBar />
-                  <RedBar percentage="80" />
-                </Bar>
-              </Skill>
-              <Skill>
-                <span>Node.Js</span>
-                <Bar>
-                  <GrayBar />
-                  <RedBar percentage="50" />
-                </Bar>
-              </Skill>
-              <Skill>
-                <span>React</span>
-                <Bar>
-                  <GrayBar />
-                  <RedBar percentage="20" />
-                </Bar>
-              </Skill>
+              {data.skills.edges.map(skill => (
+                <Skill key={skill.node.frontmatter.skillName}>
+                  <span>{skill.node.frontmatter.skillName}</span>
+                  <Bar>
+                    <GrayBar />
+                    <RedBar percentage={skill.node.frontmatter.percentage} />
+                  </Bar>
+                </Skill>
+              ))}
             </Skills>
             <OtherSkills>
               <SkillHeader>I also have an extensive knowledge of</SkillHeader>
@@ -689,29 +677,21 @@ export default class about extends PureComponent {
             <ExperienceSubtitle>My personal timeline</ExperienceSubtitle>
           </ExperienceHeader>
           <TimelineContainer>
-            <TimelineItem>
-              <TimelineItemContent>
-                <TimelineTitle>Learning the basics.</TimelineTitle>
-                <TimelineText>
-                  It was at this age (11), that I started developing a passion
-                  for computers and video, made movies and uploaded them to
-                  YouTube!
-                </TimelineText>
-                <TimelineRectangle>2009</TimelineRectangle>
-              </TimelineItemContent>
-            </TimelineItem>
-            <TimelineItem>
-              <TimelineItemContent>
-                <TimelineTitle>First website.</TimelineTitle>
-                <TimelineText>
-                  6 years later. I was still as passionate about technology as
-                  ever, but I did nothing with all the knowledge I had gained
-                  throughout the years. Until high school asked me to develop a
-                  website for the prom. I loved it.
-                </TimelineText>
-                <TimelineRectangle>2015</TimelineRectangle>
-              </TimelineItemContent>
-            </TimelineItem>
+            {data.timelineItems.edges.map(item => (
+              <TimelineItem key={item.node.frontmatter.timelineTitle}>
+                <TimelineItemContent>
+                  <TimelineTitle>
+                    {item.node.frontmatter.timelineTitle}
+                  </TimelineTitle>
+                  <TimelineText>
+                    {item.node.frontmatter.timelineDescription}
+                  </TimelineText>
+                  <TimelineRectangle>
+                    {item.node.frontmatter.year}
+                  </TimelineRectangle>
+                </TimelineItemContent>
+              </TimelineItem>
+            ))}
           </TimelineContainer>
         </ExperienceContainer>
       </Layout>
@@ -727,6 +707,32 @@ export const query = graphql`
           presentationWidth
           presentationHeight
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    skills: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/skills/" } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            percentage
+            skillName
+          }
+        }
+      }
+    }
+    timelineItems: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/timelineItems/" } }
+      sort: { fields: frontmatter___year }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            timelineDescription
+            timelineTitle
+            year
+          }
         }
       }
     }

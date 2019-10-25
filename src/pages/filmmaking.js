@@ -200,7 +200,7 @@ export default class filmmaking extends PureComponent {
               ></iframe>
             </div>
           </VidContainer>
-          <ImageGrid size={finalImages.length}>
+          <ImageGrid>
             {finalImages.map((image, i) => (
               <GridItem
                 key={image.node.childImageSharp.fixed.src}
