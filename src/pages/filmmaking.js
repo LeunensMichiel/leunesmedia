@@ -60,9 +60,10 @@ const MenuItem = styled.a`
 `
 
 const StyledSwitch = styled.div`
-  position: absolute;
-  top: 5.5vh;
+  position: fixed;
+  top: 5.6vh;
   left: 15vh;
+  z-index: 10;
 
   @media ${screens.laptop} {
     position: static;
