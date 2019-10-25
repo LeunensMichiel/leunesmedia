@@ -1,5 +1,5 @@
 ---
 skillName: JavaScript
-percentage: 77
+percentage: 82
 ---
 
