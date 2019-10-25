@@ -72,15 +72,15 @@ const StyledSwitch = styled.div`
 
 const ImageGrid = styled.div`
   display: grid;
-  grid-gap: 0.66em;
   grid-template-columns: 1fr;
-  grid-auto-rows: 225px;
+  grid-auto-rows: minmax(225px, auto);
   margin-bottom: 10.1vh;
   padding: 0 1.5em;
   width: 100%;
   max-width: 880px;
 
   @media ${screens.laptop} {
+    grid-gap: 0.66em;
     grid-template-columns: 1fr 1fr;
     grid-auto-flow: dense;
   }
@@ -98,13 +98,17 @@ const GridItem = styled.div`
   align-items: stretch;
   opacity: ${props => (props.isSelected ? "1" : ".33")};
   backface-visibility: hidden;
-  justify-self: center;
+
+  .gatsby-image-wrapper {
+    height: unset !important;
+  }
 `
 
 const VidContainer = styled.div`
   width: 100%;
   max-width: 1024px;
   margin-bottom: 10.1vh;
+
   .aspect {
     position: relative;
     padding-top: 56.25%;
@@ -121,6 +125,7 @@ export default class filmmaking extends PureComponent {
   onChangeMenuItem = type => {
     this.setState({
       type,
+      selectedVideo: 0,
     })
   }
 
@@ -143,8 +148,6 @@ export default class filmmaking extends PureComponent {
     const videos = _.filter(data.videos.edges, video => {
       return video.node.frontmatter.category.includes(type)
     })
-
-    console.log(videos)
 
     return (
       <Layout>
@@ -209,10 +212,11 @@ export default class filmmaking extends PureComponent {
                 onClick={() => this.onChangeVideo(i)}
                 isSelected={selectedVideo === i}
               >
+                {console.log(video)}
                 <Img
                   alt={video.node.frontmatter.videoTitle}
                   fixed={video.node.frontmatter.thumbnail.childImageSharp.fixed}
-                  objectFit="cover"
+                  objectFit="contain"
                   objectPosition="50% 50%"
                 />
               </GridItem>
@@ -223,6 +227,7 @@ export default class filmmaking extends PureComponent {
     )
   }
 }
+
 export const query = graphql`
   query {
     videos: allMarkdownRemark(
