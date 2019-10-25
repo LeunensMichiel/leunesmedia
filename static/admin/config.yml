@@ -8,7 +8,7 @@ public_folder: /img
 collections:
   - label: "Skills"
     name: "skill"
-    folder: "markdown/skills"
+    folder: "src/markdown/skills"
     identifier_field: skillName
     create: true
     editor:
@@ -25,7 +25,7 @@ collections:
         }
   - label: "Timeline Items"
     name: "timelineItem"
-    folder: "markdown/timelineItems"
+    folder: "src/markdown/timelineItems"
     identifier_field: timelineTitle
     create: true
     editor:
@@ -42,7 +42,7 @@ collections:
         }
   - label: "Videos"
     name: "video"
-    folder: "markdown/videos"
+    folder: "src/markdown/videos"
     identifier_field: videoTitle
     create: true
     editor:
