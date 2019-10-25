@@ -167,7 +167,7 @@ export default class soials extends PureComponent {
             <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
           </Helmet>
           <iframe
-            src="//lightwidget.com/widgets/5dc12e42abcb5e97b5f3fd2ee0589eb4.html"
+            src="https://cdn.lightwidget.com/widgets/5dc12e42abcb5e97b5f3fd2ee0589eb4.html"
             scrolling="no"
             allowtransparency="true"
             title="Instagram feed Leunes Media"
