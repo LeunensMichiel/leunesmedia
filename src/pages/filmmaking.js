@@ -144,6 +144,8 @@ export default class filmmaking extends PureComponent {
       return video.node.frontmatter.category.includes(type)
     })
 
+    console.log(videos)
+
     return (
       <Layout>
         <SEO
@@ -207,12 +209,12 @@ export default class filmmaking extends PureComponent {
                 onClick={() => this.onChangeVideo(i)}
                 isSelected={selectedVideo === i}
               >
-                {/* <Img
-                  alt={image.node.childImageSharp.fixed.originalName}
-                  fixed={image.node.childImageSharp.fixed}
+                <Img
+                  alt={video.node.frontmatter.videoTitle}
+                  fixed={video.node.frontmatter.thumbnail.childImageSharp.fixed}
                   objectFit="cover"
                   objectPosition="50% 50%"
-                /> */}
+                />
               </GridItem>
             ))}
           </ImageGrid>
@@ -232,7 +234,13 @@ export const query = graphql`
             youtubeUrl
             videoTitle
             category
-            thumbnail
+            thumbnail {
+              childImageSharp {
+                fixed(quality: 90, width: 500) {
+                  ...GatsbyImageSharpFixed_withWebp
+                }
+              }
+            }
           }
         }
       }
