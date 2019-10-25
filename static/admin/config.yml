@@ -4,3 +4,37 @@ backend:
 
 media_folder: static/img
 public_folder: /img
+
+collections:
+  - label: "Skill"
+    name: "skill"
+    folder: "skills"
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: "Skill Name", name: "skillName", widget: "string" }
+      - {
+          label: "Percentage",
+          name: "percentage",
+          widget: "number",
+          valueType: "int",
+          min: 0,
+          max: 100,
+        }
+  - label: "Timeline Item"
+    name: "timelineItem"
+    folder: "timelineItems"
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "timelineTitle", widget: "string" }
+      - { label: "Description", name: "timelineDescription", widget: "string" }
+      - {
+          label: "Year",
+          name: "year",
+          widget: "date",
+          default: "",
+          format: "YYYY",
+        }
