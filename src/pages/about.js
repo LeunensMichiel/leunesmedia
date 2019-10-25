@@ -194,11 +194,11 @@ const Skills = styled.div`
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
-  flex: 1;
   width: 100%;
   margin-bottom: 1.5em;
 
   @media ${screens.laptop} {
+    flex: 1;
     margin-right: 2em;
     margin-bottom: 0;
   }
@@ -270,9 +270,9 @@ const OtherSkills = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  flex: 1;
 
   @media ${screens.laptop} {
+    flex: 1;
     align-items: flex-end;
     margin-left: 2em;
   }

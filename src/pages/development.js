@@ -159,9 +159,10 @@ const TwallieContainer = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  margin: 20vh 0 30vh 0;
+  margin: 20.2vh 0 30.3vh 0;
 
   @media ${screens.laptop} {
+    margin: 20.2vh 0;
     height: 40vh;
   }
 `
