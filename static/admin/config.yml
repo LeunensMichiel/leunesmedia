@@ -56,3 +56,7 @@ collections:
           config:
             multiple: false
       - { label: "Youtube URL", name: "youtubeUrl", widget: "string" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["aftermovie", "event", "other"]
