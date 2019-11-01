@@ -25,6 +25,15 @@ const Menu = styled.div`
     flex-direction: row;
     margin: 10.1vh 0;
   }
+
+  @media ${screens.ipadProPortrait} {
+    flex-direction: column;
+    margin: 20.2vh 0 10.1vh 0;
+  }
+
+  @media ${screens.tabletland} {
+    padding: 0 3em;
+  }
 `
 
 const MenuItem = styled.a`
@@ -43,6 +52,10 @@ const MenuItem = styled.a`
 
   @media ${screens.laptop} {
     margin-left: 1em;
+  }
+
+  @media ${screens.ipadProPortrait} {
+    margin-left: 0;
   }
 `
 

@@ -23,8 +23,14 @@ const SocialsContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media ${screens.tablet} {
-    margin: 20.2vh auto;
+  @media ${screens.mobileSLandscape} {
+    margin-top: 30vh;
+  }
+  @media ${screens.mobileMLandscape} {
+    margin-top: 30vh;
+  }
+  @media ${screens.tabletland} {
+    margin-top: 30vh;
   }
 `
 
@@ -37,7 +43,6 @@ const StyledP = styled.p`
 
   @media ${screens.tablet} {
     font-size: 1em;
-    padding: 0;
   }
 `
 

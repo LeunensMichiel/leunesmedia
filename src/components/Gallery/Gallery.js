@@ -19,6 +19,14 @@ const ImageGrid = styled.div`
   @media ${screens.laptop} {
     padding: 0;
   }
+
+  @media ${screens.ipadProPortrait} {
+    padding: 0 0.66em;
+  }
+
+  @media ${screens.tabletland} {
+    padding: 0 0.66em;
+  }
 `
 
 const GridItem = styled.div`

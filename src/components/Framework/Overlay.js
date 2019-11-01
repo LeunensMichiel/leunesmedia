@@ -8,7 +8,7 @@ const StyledBackdrop = styled.div`
   width: 100%;
   height: 100%;
   background: ${props => (props.heavy ? "#212121" : "#37383b")};
-  opacity: ${props => (props.heavy ? 0.9 : 0.66)};
+  opacity: ${props => (props.heavy ? 0.8 : 0.66)};
   z-index: 1;
 `
 

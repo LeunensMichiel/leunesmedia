@@ -1,5 +1,4 @@
 ---
-skillName: UWP / Windows
+skillName: UWP
 percentage: 68
 ---
-

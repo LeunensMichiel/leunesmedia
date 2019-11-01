@@ -33,6 +33,9 @@ const TypeContainer = styled.div`
   position: relative;
   text-align: center;
 
+  @media ${screens.tablet} {
+    font-size: 3em;
+  }
   @media ${screens.laptop} {
     font-size: 5em;
   }
@@ -72,11 +75,27 @@ const OrganicContainer = styled.div`
   overflow: hidden;
 
   @media ${screens.mobileM} {
-    min-height: 80vh;
+    min-height: 100vh;
+  }
+
+  @media ${screens.mobileSLandscape} {
+    min-height: 150vh;
+  }
+
+  @media ${screens.mobileMLandscape} {
+    min-height: 150vh;
+  }
+
+  @media ${screens.tabletland} {
+    min-height: 100vh;
   }
 
   @media ${screens.laptop} {
     padding: 0;
+  }
+
+  @media ${screens.ipadProPortrait} {
+    min-height: 60vh;
   }
 `
 
@@ -178,9 +197,26 @@ const TwallieContainer = styled.div`
   position: relative;
   margin: 10.1vh 0 20.2vh 0;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     margin: 10.1vh 0;
     height: 40vh;
+  }
+
+  @media ${screens.ipadProPortrait} {
+    height: 30vh;
+  }
+
+  @media ${screens.mobileSLandscape} {
+    height: 80vh;
+    margin: 20.2vh 0;
+  }
+  @media ${screens.mobileMLandscape} {
+    height: 80vh;
+    margin: 20.2vh 0;
+  }
+  @media ${screens.tabletland} {
+    height: 60vh;
+    margin: 20.2vh 0;
   }
 `
 
@@ -202,6 +238,31 @@ const TwallieSecondContainer = styled.div`
     align-items: center;
     box-shadow: none;
     max-width: 1024px;
+  }
+  @media ${screens.mobileSLandscape} {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+    max-width: 1024px;
+  }
+  @media ${screens.mobileMLandscape} {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+    max-width: 1024px;
+  }
+  @media ${screens.tabletland} {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+    max-width: 90vw;
+  }
+
+  @media ${screens.ipadProPortrait} {
+    max-width: 90vw;
   }
 `
 
@@ -356,8 +417,27 @@ const ArtistHuntContainer = styled.div`
   padding: 0 1.5em;
   overflow: hidden;
 
+  @media ${screens.tablet} {
+    padding: 0 3em;
+  }
+
   @media ${screens.laptop} {
     padding: 0;
+  }
+
+  @media ${screens.ipadProPortrait} {
+    min-height: 75vh;
+    padding: 0 3em;
+  }
+
+  @media ${screens.mobileMLandscape} {
+    min-height: 150vh;
+    padding: 0 3em;
+  }
+
+  @media ${screens.tabletland} {
+    min-height: 100vh;
+    padding: 0 3em;
   }
 `
 
@@ -372,7 +452,7 @@ const AHTitle = styled.h1`
   font-size: 3.5em;
   margin: 0 0 0.4em 0;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     font-size: 4em;
   }
 `
@@ -380,7 +460,19 @@ const AHTitle = styled.h1`
 const AHSubtitle = styled.p`
   margin: 0;
 
+  @media ${screens.tablet} {
+    width: 75%;
+  }
+
   @media ${screens.laptop} {
+    width: 55%;
+  }
+
+  @media ${screens.ipadProPortrait} {
+    width: 75%;
+  }
+
+  @media ${screens.tabletland} {
     width: 55%;
   }
 `
@@ -396,7 +488,7 @@ const AHBodyTitle = styled.h2`
   font-size: 1.8em;
   margin: 1em 0 0.5em 0;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     font-size: 2em;
     width: 50%;
     margin: 0 0 0.5em 0;
@@ -408,10 +500,19 @@ const AHBodyDescription = styled.p`
   margin: 0;
   font-size: 0.8em;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     margin: 0;
     font-size: 0.9em;
+    width: 60%;
+  }
+
+  @media ${screens.laptop} {
     width: 50%;
+  }
+
+  @media ${screens.ipadProPortrait} {
+    margin: 0;
+    width: 60%;
   }
 `
 
@@ -422,7 +523,7 @@ const AvailableOn = styled.div`
   margin-top: 1.5em;
   align-self: center;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     margin-top: 0;
     align-self: inherit;
   }
@@ -440,7 +541,7 @@ const AvailableText = styled.div`
     font-size: 0.5em;
   }
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     font-size: 0.6em;
 
     span {
@@ -474,13 +575,29 @@ const ArtistHuntImage = styled.div`
   height: 50vh;
   margin-top: 1.5em;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     position: absolute;
     bottom: -16%;
-    right: 0;
+    right: 3em;
     width: 30%;
     height: auto;
     margin-top: initial;
+  }
+
+  @media ${screens.laptop} {
+    right: 0;
+  }
+  @media ${screens.ipadProPortrait} {
+    right: 3em;
+  }
+  @media ${screens.mobileSLandscape} {
+    width: 30%;
+  }
+  @media ${screens.mobileMLandscape} {
+    width: 30%;
+  }
+  @media ${screens.tabletland} {
+    right: 3em;
   }
 `
 
@@ -497,9 +614,19 @@ const MindFulnessContainer = styled.div`
   overflow: hidden;
   padding: 20.2vh 1.5em 10.1vh 1.5em;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     flex-direction: row;
     padding: 20.2vh 0;
+  }
+
+  @media ${screens.mobileSLandscape} {
+    flex-direction: row;
+    padding: 20.2vh 1.5em;
+  }
+
+  @media ${screens.mobileMLandscape} {
+    flex-direction: row;
+    padding: 20.2vh 1.5em;
   }
 `
 
@@ -524,6 +651,10 @@ const MFHeader = styled.div`
 const MFTitle = styled.h1`
   font-size: 2.2em;
   margin: 0 0 0.4em 0;
+
+  @media ${screens.tablet} {
+    font-size: 3em;
+  }
   @media ${screens.laptop} {
     font-size: 4em;
   }
@@ -534,10 +665,17 @@ const MFDescription = styled.p`
   font-size: 0.9em;
   text-align: justify;
 
-  @media ${screens.laptop} {
-    width: 55%;
+  @media ${screens.tablet} {
+    width: 70%;
     font-size: 1em;
     text-align: left;
+  }
+
+  @media ${screens.laptop} {
+    width: 55%;
+  }
+  @media ${screens.ipadProPortrait} {
+    width: 70%;
   }
 `
 
@@ -554,9 +692,15 @@ const MFBodyTitle = styled.h2`
   font-size: 1.5em;
   margin: 0 0 0.5em 0;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     font-size: 2em;
+    width: 90%;
+  }
+  @media ${screens.laptop} {
     width: 70%;
+  }
+  @media ${screens.ipadProPortrait} {
+    width: 90%;
   }
 `
 
@@ -566,9 +710,10 @@ const MFBodyDescription = styled.p`
   font-size: 0.9em;
   text-align: justify;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     font-size: 1em;
     text-align: left;
+    width: 75%;
   }
 `
 
@@ -576,9 +721,38 @@ const MindFulnessImage = styled.div`
   width: 80%;
   margin-top: 1.5em;
 
+  @media ${screens.tablet} {
+    width: 66%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
   @media ${screens.laptop} {
     width: 20%;
     margin-left: 20%;
+    margin-right: 5%;
+  }
+
+  @media ${screens.ipadProPortrait} {
+    width: 66%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  @media ${screens.mobileSLandscape} {
+    width: 66%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  @media ${screens.mobileMLandscape} {
+    width: 66%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  @media ${screens.tabletland} {
+    width: 66%;
+    margin-left: 5%;
     margin-right: 5%;
   }
 `
@@ -592,7 +766,7 @@ const MindfulLogo = styled(Mindfulness)`
   opacity: 0.33;
   z-index: 1;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     top: -10%;
   }
 `
@@ -607,11 +781,30 @@ const GhenterpriseContainer = styled.div`
   flex-direction: column-reverse;
   justify-content: flex-end;
 
+  @media ${screens.tablet} {
+    flex-direction: row;
+    justify-content: stretch;
+    min-height: 60vh;
+  }
+
   @media ${screens.laptop} {
     min-height: 100vh;
     padding: 10.1vh 0;
-    flex-direction: row;
-    justify-content: stretch;
+  }
+
+  @media ${screens.ipadProPortrait} {
+    min-height: 60vh;
+    padding: 10.1vh 1.5em;
+  }
+
+  @media ${screens.mobileSLandscape} {
+    padding: 10.1vh 1.5em;
+  }
+  @media ${screens.mobileMLandscape} {
+    padding: 10.1vh 1.5em;
+  }
+  @media ${screens.tabletland} {
+    padding: 10.1vh 3em;
     min-height: 100vh;
   }
 `
@@ -625,7 +818,7 @@ const GhenterpriseInnerContainer = styled.div`
   max-width: 1024px;
   margin: 0 auto;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     align-items: flex-end;
   }
 `
@@ -637,9 +830,13 @@ const GPHeader = styled.div`
   justify-content: flex-start;
   margin-top: 1.5em;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     margin-bottom: 2em;
     margin-top: 0;
+    width: 80%;
+  }
+
+  @media ${screens.laptop} {
     width: 55%;
   }
 `
@@ -649,7 +846,7 @@ const GPTitle = styled.h1`
   margin: 0 0 0.4em 0;
   text-align: right;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     font-size: 4em;
   }
 `
@@ -660,7 +857,7 @@ const GPDescription = styled.p`
   font-size: 0.8em;
   width: 90%;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     font-size: 1em;
     width: 100%;
   }
@@ -671,8 +868,22 @@ const GhenterpriseImage = styled.div`
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.1);
 
+  @media ${screens.tablet} {
+    width: 60%;
+    position: absolute;
+    bottom: -5%;
+    left: 10%;
+  }
   @media ${screens.laptop} {
     width: 45%;
+  }
+
+  @media ${screens.ipadProPortrait} {
+    width: 60%;
+  }
+
+  @media ${screens.tabletland} {
+    width: 60%;
     position: absolute;
     bottom: -5%;
     left: 10%;
@@ -712,6 +923,10 @@ const MoroccoContainer = styled.div`
     min-height: 100vh;
     padding: 10.1vh 0 20.2vh 0;
     align-items: stretch;
+  }
+
+  @media ${screens.ipadProPortrait} {
+    min-height: 80vh;
   }
 `
 
@@ -884,9 +1099,7 @@ export default class development extends PureComponent {
                 </CardTitle>
                 <CardDivider />
                 <CardDescription>
-                  A website for the
-                  <br />
-                  Belgian DJ: Twallie
+                  A website for the Belgian DJ: Twallie
                 </CardDescription>
                 <CardTechs>
                   <CardTech>Gatsby.js</CardTech>
