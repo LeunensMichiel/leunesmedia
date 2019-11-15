@@ -44,8 +44,10 @@ export default class Layout extends PureComponent {
               <Toolbar
                 hamburgerClickHandler={this.drawerToggleClickHandler}
                 isDark={
-                  location.pathname === "/" ||
-                  location.pathname === "/filmmaking"
+                  location.pathname === "/en/" ||
+                  location.pathname === "/nl/" ||
+                  location.pathname === "/en/filmmaking/" ||
+                  location.pathname === "/nl/filmmaking/"
                 }
               />
             )}

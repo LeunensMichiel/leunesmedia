@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 import styled from "styled-components"
+import { injectIntl } from "gatsby-plugin-intl"
 
 import colors from "../components/Framework/colors"
 import Layout from "../components/layout"
@@ -172,7 +173,7 @@ const SectionParagraph = styled.p`
   }
 `
 
-export default class IndexPage extends PureComponent {
+class IndexPage extends PureComponent {
   constructor() {
     super()
     this.mainRef = React.createRef()
@@ -183,7 +184,7 @@ export default class IndexPage extends PureComponent {
   }
 
   render() {
-    const { data } = this.props
+    const { data, intl } = this.props
     return (
       <Layout>
         <SEO
@@ -237,7 +238,9 @@ export default class IndexPage extends PureComponent {
             </MainImage>
           )}
           <MainSectionInfo>
-            <SectionHeader>Photographer</SectionHeader>
+            <SectionHeader>
+              {intl.formatMessage({ id: "photographer" })}
+            </SectionHeader>
             <SectionParagraph>
               Snapping life's precious & short moments, shooting moody
               landscapes, capturing intriguing eyes and everything in between.
@@ -297,6 +300,8 @@ export default class IndexPage extends PureComponent {
     )
   }
 }
+
+export default injectIntl(IndexPage)
 
 export const query = graphql`
   query {

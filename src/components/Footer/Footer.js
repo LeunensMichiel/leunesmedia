@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
 
 import colors from "../Framework/colors"
 import LMLogo from "../../images/svgs/logoblack.svg"
@@ -75,13 +76,13 @@ const SocialsContainer = styled.div`
 
 const LangContainer = styled.div`
   display: flex;
-  width: 100%;
-  justify-content: center;
+  width: 50px;
+  justify-content: space-evenly;
   color: ${colors.secondaryBlack};
 `
 
 const StyledSpan = styled.span`
-  font-size: 0.9em;
+  font-size: 0.8em;
   border-bottom: 1px solid
     ${props =>
       props.active === "true" ? `${colors.secondaryBlack}` : "transparent"};
@@ -93,7 +94,7 @@ const StyledSpan = styled.span`
   }
 
   @media ${screens.laptop} {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 `
 const Footer = () => {
@@ -144,9 +145,18 @@ const Footer = () => {
         </a>
       </SocialsContainer>
       <LangContainer>
-        <StyledSpan active="false">nl</StyledSpan>
-        &nbsp;|&nbsp;
-        <StyledSpan active="true">en</StyledSpan>
+        <IntlContextConsumer>
+          {({ languages, language: currentLocale }) =>
+            languages.map(language => (
+              <StyledSpan
+                onClick={() => changeLocale(language)}
+                active={currentLocale === language ? "true" : "false"}
+              >
+                {language}
+              </StyledSpan>
+            ))
+          }
+        </IntlContextConsumer>
       </LangContainer>
     </FooterContainer>
   )

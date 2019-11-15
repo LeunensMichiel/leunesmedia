@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
+
 import colors from "../Framework/colors"
 
 import CrossIcon from "../../images/svgs/cross-out.svg"
@@ -99,8 +101,9 @@ const StyledLink = styled(Link)`
 
 const LangContainer = styled.div`
   display: flex;
-  width: 100%;
-  justify-content: center;
+  align-self: center;
+  width: 66px;
+  justify-content: space-evenly;
   color: ${colors.secondaryBlack};
   margin-bottom: 1.66em;
 `
@@ -161,9 +164,18 @@ const SideDrawer = ({ show, click }) => {
         </NavigationItem>
       </NavigationItems>
       <LangContainer>
-        <StyledSpan active="false">nl</StyledSpan>
-        &nbsp;|&nbsp;
-        <StyledSpan active="true">en</StyledSpan>
+        <IntlContextConsumer>
+          {({ languages, language: currentLocale }) =>
+            languages.map(language => (
+              <StyledSpan
+                onClick={() => changeLocale(language)}
+                active={currentLocale === language ? "true" : "false"}
+              >
+                {language}
+              </StyledSpan>
+            ))
+          }
+        </IntlContextConsumer>
       </LangContainer>
     </Navigation>
   )
