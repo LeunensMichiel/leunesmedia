@@ -1,3 +1,17 @@
 {
-    "photographer": "Fotograaf"
+    "general": {
+        "scrolldown": "Scrol omlaag"
+    },
+    "index": {
+        "header1": "Fotograaf & Content Creator",
+        "header2": "Web & Mobiele Ontwikkelaar",
+        "about": "Wie ben ik",
+        "photographer": "Fotograaf",
+        "dev": "Web & Mobiele Ontwikkelaar",
+        "filmmaker": "Content Creator",
+        "photoContent": "De kostbare & korte momenten van het leven, moody landschappen fotograferen, intrigerende ogen en alles daartussenin vastleggen.",
+        "devContent": "Een website hebben is cool, een app hebben is cooler. Wil je dat ik beide maak? Als topstudent Informatica aan de UGent kan ik het allebei leveren. Maar eerst: koffie.",
+        "filmContent": "Dope video's maken met daadwerkelijke visuele effecten sinds '11. Op zoek naar een coole manier om uw bedrijf te promoten? Herbeleef je het moment alsof je er was door middel van een aftermovie? Zoek niet verder!",
+        "learnBtn": "Meer Info"
+    }
 }

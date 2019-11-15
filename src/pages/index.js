@@ -1,9 +1,8 @@
 import React, { PureComponent } from "react"
 import { graphql } from "gatsby"
-import { Link } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 import styled from "styled-components"
-import { injectIntl } from "gatsby-plugin-intl"
+import { injectIntl, Link } from "gatsby-plugin-intl"
 
 import colors from "../components/Framework/colors"
 import Layout from "../components/layout"
@@ -163,7 +162,7 @@ const SectionHeader = styled.h1`
 const SectionParagraph = styled.p`
   color: ${colors.white};
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   text-align: ${props => (props.left ? "left" : "right")};
   margin-bottom: 2em;
   font-size: 0.8em;
@@ -207,10 +206,14 @@ class IndexPage extends PureComponent {
           )}
           <LogoContainer>
             <StyledLogo />
-            <StyledSubheader inverted>Photographer & Filmmaker</StyledSubheader>
-            <StyledSubheader>Web & Mobile Developer</StyledSubheader>
+            <StyledSubheader inverted>
+              {intl.formatMessage({ id: "index.header1" })}
+            </StyledSubheader>
+            <StyledSubheader>
+              {intl.formatMessage({ id: "index.header2" })}
+            </StyledSubheader>
             <StyledAnchor to="/about">
-              <span>about me</span>
+              <span>{intl.formatMessage({ id: `index.about` })}</span>
               <Chevron />
             </StyledAnchor>
           </LogoContainer>
@@ -219,7 +222,7 @@ class IndexPage extends PureComponent {
               this.scroll(this.mainRef)
             }}
           >
-            <span>scroll down</span>
+            <span>{intl.formatMessage({ id: `general.scrolldown` })}</span>
             <Chevron />
           </DownScroll>
         </Jumbotron>
@@ -239,13 +242,15 @@ class IndexPage extends PureComponent {
           )}
           <MainSectionInfo>
             <SectionHeader>
-              {intl.formatMessage({ id: "photographer" })}
+              {intl.formatMessage({ id: "index.photographer" })}
             </SectionHeader>
             <SectionParagraph>
-              Snapping life's precious & short moments, shooting moody
-              landscapes, capturing intriguing eyes and everything in between.
+              {intl.formatMessage({ id: `index.photoContent` })}
             </SectionParagraph>
-            <Button to="/photography" />
+            <Button
+              to="/photography"
+              text={intl.formatMessage({ id: `index.learnBtn` })}
+            />
           </MainSectionInfo>
         </MainSection>
         <MainSection>
@@ -263,13 +268,16 @@ class IndexPage extends PureComponent {
             </MainImage>
           )}
           <MainSectionInfo left>
-            <SectionHeader left>Web & Mobile Developer</SectionHeader>
+            <SectionHeader left>
+              {intl.formatMessage({ id: "index.dev" })}
+            </SectionHeader>
             <SectionParagraph left>
-              Having a website is cool, having an app is cooler. Want me to make
-              both? As a top-notch Computer Science student at UGent, I can
-              deliver. But first: coffee.
+              {intl.formatMessage({ id: `index.devContent` })}
             </SectionParagraph>
-            <Button to="/development" />
+            <Button
+              to="/development"
+              text={intl.formatMessage({ id: `index.learnBtn` })}
+            />
           </MainSectionInfo>
         </MainSection>
         <MainSection>
@@ -287,13 +295,16 @@ class IndexPage extends PureComponent {
             </MainImage>
           )}
           <MainSectionInfo>
-            <SectionHeader>Filmmaker</SectionHeader>
+            <SectionHeader>
+              {intl.formatMessage({ id: "index.filmmaker" })}
+            </SectionHeader>
             <SectionParagraph>
-              Making dope videos with actual visual effects since '11. Looking
-              for a cool way to promote your business? Relive the moment like
-              you were there through an aftermovie? Look no further!
+              {intl.formatMessage({ id: `index.filmContent` })}
             </SectionParagraph>
-            <Button to="/filmmaking" />
+            <Button
+              to="/filmmaking"
+              text={intl.formatMessage({ id: `index.learnBtn` })}
+            />
           </MainSectionInfo>
         </MainSection>
       </Layout>

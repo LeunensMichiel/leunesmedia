@@ -1,3 +1,17 @@
 {
-    "photographer": "Photographer"
+    "general": {
+        "scrolldown": "Scroll Down"
+    },
+    "index": {
+        "header1": "Photographer & Content Creator",
+        "header2": "Web & Mobile Developer",
+        "about": "about me",
+        "photographer": "Photographer",
+        "dev": "Web & Mobile Developer",
+        "filmmaker": "Filmmaker",
+        "photoContent": "Snapping life's precious & short moments, shooting moody landscapes, capturing intriguing eyes and everything in between.",
+        "devContent": "Having a website is cool, having an app is cooler. Want me to make both? As a top-notch Computer Science student at UGent, I can deliver. But first: coffee.",
+        "filmContent": "Making dope videos with actual visual effects since '11. Looking for a cool way to promote your business? Relive the moment like you were there through an aftermovie? Look no further!",
+        "learnBtn": "Learn More"
+    }
 }
