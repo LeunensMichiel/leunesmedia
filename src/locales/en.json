@@ -11,7 +11,7 @@
         "footer": "All Rights Reserved.",
         "goback": "go back",
         "success": "Woosh!",
-        "successmessage": "Message has been sent. I'll be in contact soon."
+        "successmessage": "Message has been sent. We'll be in touch soon."
     },
     "SEO": {
         "indexTitle": "Portfolio Leunes Media",
@@ -36,9 +36,9 @@
         "photographer": "Photographer",
         "dev": "Web & Mobile Developer",
         "filmmaker": "Filmmaker",
-        "photoContent": "Snapping life's precious & short moments, shooting moody landscapes, capturing intriguing eyes and everything in between.",
-        "devContent": "Having a website is cool, having an app is cooler. Want me to make both? As a top-notch Computer Science student at UGent, I can deliver. But first: coffee.",
-        "filmContent": "Making dope videos with actual visual effects since '11. Looking for a cool way to promote your business? Relive the moment like you were there through an aftermovie? Look no further!",
+        "photoContent": "From moody landscapes to atmospheric images of events and parties. Weddings, portraits, products... I do them all! The feeling of capturing a moment, that's what I do it for.",
+        "devContent": "Graduated as an Computer Sciences Engineer, I like to focus on developing web and mobile applications. But not without my coffee!",
+        "filmContent": "Aftermovie? Music video? Corporate event? Your search is at an end. Team up with someone who has been playing with Adobe After Effects since he was 11 years old!",
         "learnBtn": "Learn More"
     },
     "about": {
@@ -65,6 +65,7 @@
         "timeline": "My personal timeline"
     },
     "photography": {
+        "more": "More soon!",
         "other": "other",
         "event": "event",
         "portrait": "portrait",
@@ -87,9 +88,10 @@
         "count2": "made of organic code.",
         "otherStuff": "Oh, and here's some other stuff I've made.",
         "git": "Please head over to",
+        "or": "or",
         "git2": "for more information about my skills and technology-knowledge.",
         "twallieAlt": "Screenshot of the website of DJ Twallie, made by Michiel Leunens",
-        "twallieDesc": "A website for the\nBelgian DJ: Twallie",
+        "twallieDesc": "A website for the Belgian DJ: Twallie",
         "goto": "Go to site",
         "status": "Status: ",
         "published": "published",
@@ -100,7 +102,8 @@
         "unpublished": "Unpublished",
         "ahAlt": "Phone with the Artisthunt app, an app made by Michiel Leunens",
         "mfAlt": "Phone with the Mindfulness app, an app made by Michiel Leunens and his co-students",
-        "mfTitle": "Mindfulness\n Stay happy.",
+        "mfTitle": "Mindfulness",
+        "mfSubtitle": "Stay happy.",
         "mfDesc": "Made for psychologist Pieter-Jan De Schryver and coworkers. Taking mindfulness sessions to the next step.",
         "mfTitle2": "From school project to contract.",
         "mfDesc2": "Because of its success, HoGhent gave us the opportunity to work closer with the client.",
@@ -134,6 +137,7 @@
         "placeholder6": "What's up?",
         "footnote": "fields with * are required",
         "sentBtn": "Send",
+        "address": "Address",
         "ghent": "Ghent",
         "belgium": "Belgium"
     }
