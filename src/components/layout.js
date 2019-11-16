@@ -30,12 +30,10 @@ export default class Layout extends PureComponent {
     const { children } = this.props
     const { sideDrawerOpen } = this.state
     let backdrop
-
-    // console.log(this.props.location.pathname)
-
     if (sideDrawerOpen) {
       backdrop = <Backdrop click={this.backdropToggleClickHandler} />
     }
+
     return (
       <>
         <IconContext.Provider value={{ className: "social__icons" }}>

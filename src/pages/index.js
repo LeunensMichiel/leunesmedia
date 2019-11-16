@@ -20,18 +20,17 @@ const Jumbotron = styled.div`
   min-width: 100%;
   min-height: 98vh;
   justify-content: center;
+  background-color: ${colors.black};
 `
 
 const MainImage = styled.div`
-  background-color: ${colors.secondaryBlack};
-  max-height: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
-  z-index: -1;
+  z-index: 1;
 `
 const LogoContainer = styled.div`
   width: 80%;
@@ -133,6 +132,8 @@ const MainSectionInfo = styled.div`
   width: 80%;
   max-width: 1024px;
   margin: 0 auto;
+  position: relative;
+  z-index: 5;
 `
 
 const SectionHeader = styled.h1`
@@ -233,7 +234,7 @@ class IndexPage extends PureComponent {
               <Img
                 fluid={data.firstSection.childImageSharp.fluid}
                 objectFit="cover"
-                objectPosition="50% 50%"
+                objectPosition="50% 80%"
                 alt="a landscape photo"
                 title="Image Photography Section"
                 style={{ position: "static" }}
@@ -248,7 +249,7 @@ class IndexPage extends PureComponent {
               {intl.formatMessage({ id: `index.photoContent` })}
             </SectionParagraph>
             <Button
-              to="/photography"
+              to="/photography/"
               text={intl.formatMessage({ id: `index.learnBtn` })}
             />
           </MainSectionInfo>
@@ -275,7 +276,7 @@ class IndexPage extends PureComponent {
               {intl.formatMessage({ id: `index.devContent` })}
             </SectionParagraph>
             <Button
-              to="/development"
+              to="/development/"
               text={intl.formatMessage({ id: `index.learnBtn` })}
             />
           </MainSectionInfo>
@@ -287,7 +288,7 @@ class IndexPage extends PureComponent {
               <Img
                 fluid={data.thirdSection.childImageSharp.fluid}
                 objectFit="cover"
-                objectPosition="50% 50%"
+                objectPosition="50% 40%"
                 alt="a photo of me filming at sunset"
                 title="Image Filmmaking Section"
                 style={{ position: "static" }}
@@ -302,7 +303,7 @@ class IndexPage extends PureComponent {
               {intl.formatMessage({ id: `index.filmContent` })}
             </SectionParagraph>
             <Button
-              to="/filmmaking"
+              to="/filmmaking/"
               text={intl.formatMessage({ id: `index.learnBtn` })}
             />
           </MainSectionInfo>
@@ -316,7 +317,7 @@ export default injectIntl(IndexPage)
 
 export const query = graphql`
   query {
-    mainImage: file(relativePath: { eq: "main.jpg" }) {
+    mainImage: file(relativePath: { eq: "website.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 2048, quality: 85) {
           presentationWidth

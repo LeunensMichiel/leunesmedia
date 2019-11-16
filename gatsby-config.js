@@ -3,6 +3,8 @@ module.exports = {
     title: `Leunes Media`,
     description: `Portfolio of Michiel Leunens, founder of Leunes Media`,
     author: `@LeunensMichiel`,
+    url: `https://www.leunesmedia.com`,
+    twitterUsername: `@Deleunes254`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

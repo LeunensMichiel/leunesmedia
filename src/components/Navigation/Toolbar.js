@@ -3,9 +3,9 @@ import { PropTypes } from "prop-types"
 import styled from "styled-components"
 
 import colors from "../Framework/colors"
+import screens from "../Framework/Screens"
 
 import Hamburger from "../../images/svgs/menu.svg"
-import screens from "../Framework/Screens"
 
 const HamburgerIcon = styled(Hamburger)`
   height: 2.5rem;

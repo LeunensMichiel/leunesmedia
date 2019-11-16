@@ -5,6 +5,9 @@ backend:
 media_folder: static/img
 public_folder: /img
 
+site_url: https://leunesmedia.com
+logo_url: https://leunesmedia.com/img/logo.svg
+
 collections:
   - label: "Skills"
     name: "skill"

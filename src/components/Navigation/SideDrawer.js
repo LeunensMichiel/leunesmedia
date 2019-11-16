@@ -1,7 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
-import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
+import {
+  IntlContextConsumer,
+  changeLocale,
+  injectIntl,
+  Link,
+} from "gatsby-plugin-intl"
 
 import colors from "../Framework/colors"
 
@@ -120,7 +124,7 @@ const StyledSpan = styled.span`
   }
 `
 
-const SideDrawer = ({ show, click }) => {
+const SideDrawer = ({ show, click, intl }) => {
   return (
     <Navigation show={show.toString()}>
       <span onClick={click}>
@@ -129,37 +133,37 @@ const SideDrawer = ({ show, click }) => {
       <NavigationItems>
         <NavigationItem>
           <StyledLink to="/" activeClassName="activeLink">
-            Home
+            {intl.formatMessage({ id: `general.home` })}
           </StyledLink>
         </NavigationItem>
         <NavigationItem>
-          <StyledLink to="/about" activeClassName="activeLink">
-            About
+          <StyledLink to="/about/" activeClassName="activeLink">
+            {intl.formatMessage({ id: `general.about` })}
           </StyledLink>
         </NavigationItem>
         <NavigationItem>
-          <StyledLink to="/photography" activeClassName="activeLink">
-            Photography
+          <StyledLink to="/photography/" activeClassName="activeLink">
+            {intl.formatMessage({ id: `general.photography` })}
           </StyledLink>
         </NavigationItem>
         <NavigationItem>
-          <StyledLink to="/development" activeClassName="activeLink">
-            Development
+          <StyledLink to="/development/" activeClassName="activeLink">
+            {intl.formatMessage({ id: `general.development` })}
           </StyledLink>
         </NavigationItem>
         <NavigationItem>
-          <StyledLink to="/filmmaking" activeClassName="activeLink">
-            Filmmaking
+          <StyledLink to="/filmmaking/" activeClassName="activeLink">
+            {intl.formatMessage({ id: `general.filmmaking` })}
           </StyledLink>
         </NavigationItem>
         <NavigationItem>
-          <StyledLink to="/socials" activeClassName="activeLink">
-            Socials
+          <StyledLink to="/socials/" activeClassName="activeLink">
+            {intl.formatMessage({ id: `general.socials` })}
           </StyledLink>
         </NavigationItem>
         <NavigationItem last>
-          <StyledLink to="/contact" activeClassName="activeLink">
-            Contact
+          <StyledLink to="/contact/" activeClassName="activeLink">
+            {intl.formatMessage({ id: `general.contact` })}
           </StyledLink>
         </NavigationItem>
       </NavigationItems>
@@ -181,4 +185,4 @@ const SideDrawer = ({ show, click }) => {
   )
 }
 
-export default SideDrawer
+export default injectIntl(SideDrawer)

@@ -54,7 +54,7 @@ const DownScroll = styled.div`
 
 const HeaderImage = styled(Img)`
   width: 100%;
-  height: 33vh;
+  height: 50vh;
   opacity: 0.8;
 `
 

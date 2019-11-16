@@ -1,6 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
+import {
+  IntlContextConsumer,
+  changeLocale,
+  injectIntl,
+} from "gatsby-plugin-intl"
 
 import colors from "../Framework/colors"
 import LMLogo from "../../images/svgs/logoblack.svg"
@@ -97,14 +101,15 @@ const StyledSpan = styled.span`
     font-size: 0.9em;
   }
 `
-const Footer = () => {
+const Footer = ({ intl }) => {
   return (
     <FooterContainer>
       <FooterLine />
       <TextContainer>
         <Logo />
         <Copyright>
-          &copy; {new Date().getFullYear()}. All Rights Reserved.
+          &copy; {new Date().getFullYear()}.{" "}
+          {intl.formatMessage({ id: `general.footer` })}
         </Copyright>
       </TextContainer>
       <SocialsContainer>
@@ -162,4 +167,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default injectIntl(Footer)

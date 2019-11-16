@@ -6,24 +6,39 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import colors from "../components/Framework/colors"
 import Chevron from "../images/svgs/right-chevron.svg"
+import screens from "../components/Framework/Screens"
 
 const Container = styled.div`
   min-width: 100%;
+  min-height: 66vh;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 1.5em;
 `
 
 const StyledHeader = styled.h1`
   margin: 0;
-  font-size: 25vh;
+  font-size: 5em;
   background: url(${props => props.src}) center;
   background-size: contain;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+
+  @media ${screens.tablet} {
+    font-size: 15em;
+  }
+
+  @media ${screens.tabletland} {
+    font-size: 8em;
+  }
+
+  @media ${screens.laptop} {
+    font-size: 15em;
+  }
 `
 const StyledAnchor = styled.a`
   color: ${colors.secondaryBlack};
@@ -78,7 +93,9 @@ export default NotFoundPage
 
 export const query = graphql`
   query {
-    notFound: file(relativePath: { eq: "404.jpg" }) {
+    notFound: file(
+      relativePath: { eq: "photography/landscape/_1066684-1.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 1024, quality: 66) {
           presentationWidth
