@@ -17,6 +17,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 1.5em;
+  text-align: center;
 
   @media ${screens.tabletland} {
     min-height: 100vh;
@@ -25,15 +26,16 @@ const Container = styled.div`
 
 const StyledHeader = styled.h1`
   margin: 0;
-  font-size: 5em;
-  background: url(${props => props.src}) center;
-  background-size: contain;
+  font-size: 3em;
+  background: url(${props => props.src}) 50% 80%;
+  background-size: cover;
   background-clip: text;
+  background-repeat: no-repeat;
   -webkit-background-clip: text;
   color: transparent;
 
   @media ${screens.tablet} {
-    font-size: 15em;
+    font-size: 8em;
   }
 
   @media ${screens.tabletland} {
@@ -41,7 +43,17 @@ const StyledHeader = styled.h1`
   }
 
   @media ${screens.laptop} {
-    font-size: 15em;
+    font-size: 10em;
+  }
+`
+const StyledMessage = styled.p`
+  font-size: 0.8em;
+  color: ${colors.secondaryBlack};
+  width: 66%;
+  margin: 1em 0;
+
+  @media ${screens.tablet} {
+    font-size: 1em;
   }
 `
 const StyledAnchor = styled.a`
@@ -73,13 +85,16 @@ const StyledAnchor = styled.a`
   }
 `
 
-const NotFoundPage = ({ data }) => (
+const SuccessPage = ({ data }) => (
   <Layout>
-    <SEO title="404: Not found" />
+    <SEO title="Message sent" />
     <Container>
       <StyledHeader src={data.notFound.childImageSharp.fluid.src}>
-        404.
+        Success!
       </StyledHeader>
+      <StyledMessage>
+        Message has been sent. I'll be in contact soon.
+      </StyledMessage>
       <StyledAnchor
         onClick={e => {
           e.preventDefault()
@@ -93,13 +108,11 @@ const NotFoundPage = ({ data }) => (
   </Layout>
 )
 
-export default NotFoundPage
+export default SuccessPage
 
 export const query = graphql`
   query {
-    notFound: file(
-      relativePath: { eq: "photography/landscape/_1066684-1.jpg" }
-    ) {
+    notFound: file(relativePath: { eq: "mainsection1.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1024, quality: 66) {
           presentationWidth

@@ -18,7 +18,7 @@ const Jumbotron = styled.div`
   display: flex;
   position: relative;
   min-width: 100%;
-  min-height: 98vh;
+  min-height: 95vh;
   justify-content: center;
   background-color: ${colors.black};
 `

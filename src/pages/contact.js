@@ -5,6 +5,7 @@ import MapGL, {
   NavigationControl,
   FullscreenControl,
 } from "react-map-gl"
+import { IntlContextConsumer, injectIntl } from "gatsby-plugin-intl"
 
 import Layout from "../components/layout"
 import colors from "../components/Framework/colors"
@@ -320,96 +321,100 @@ export default class contact extends PureComponent {
         <ContactContainer>
           <ContactCard>
             <CardHeader>Let's get in touch.</CardHeader>
-            <Form
-              name="contact"
-              method="post"
-              action="/home"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-              <input name="bot-field" style={{ display: "none" }} />
-              <FirstColumn>
-                <InputContainer>
-                  <StyledLabel htmlFor="firstName">
-                    First Name<sup>*</sup>
-                  </StyledLabel>
-                  <StyledInput
-                    type="text"
-                    placeholder="Enter your first name"
-                    id="firstName"
-                    name="firstName"
-                    required
-                  />
-                  <div className="bar" />
-                </InputContainer>
-                <InputContainer>
-                  <StyledLabel htmlFor="lastName">
-                    Last Name<sup>*</sup>
-                  </StyledLabel>
-                  <StyledInput
-                    type="text"
-                    placeholder="Enter your last name"
-                    id="lastName"
-                    name="lastName"
-                    required
-                  />
-                  <div className="bar" />
-                </InputContainer>
-                <InputContainer>
-                  <StyledLabel htmlFor="email">
-                    Email<sup>*</sup>
-                  </StyledLabel>
-                  <StyledInput
-                    type="email"
-                    placeholder="Enter your email address"
-                    id="email"
-                    name="email"
-                    required
-                  />
-                  <div className="bar" />
-                </InputContainer>
-                <InputContainer>
-                  <StyledLabel htmlFor="phone">Phone</StyledLabel>
-                  <StyledInput
-                    type="tel"
-                    placeholder="Enter your phone number"
-                    id="phone"
-                    name="phone"
-                  />
-                  <div className="bar" />
-                </InputContainer>
-                <InputContainer>
-                  <StyledLabel htmlFor="subject">
-                    Subject<sup>*</sup>
-                  </StyledLabel>
-                  <StyledInput
-                    type="text"
-                    placeholder="Enter subject"
-                    id="subject"
-                    name="subject"
-                    required
-                  />
-                  <div className="bar" />
-                </InputContainer>
-              </FirstColumn>
-              <SecondColumn>
-                <InputContainer className="textareaContainer">
-                  <StyledLabel htmlFor="message">
-                    Message<sup>*</sup>
-                  </StyledLabel>
-                  <StyledTextbox
-                    required
-                    placeholder="What's up?"
-                    id="message"
-                    name="message"
-                  />
-                  <div className="bar" />
-                  <Annotation>fields with * are required</Annotation>
-                </InputContainer>
-                <StyledButton type="submit">Send</StyledButton>
-              </SecondColumn>
-            </Form>
+            <IntlContextConsumer>
+              {({ language: currentLocale }) => (
+                <Form
+                  name="contact"
+                  method="post"
+                  action={`/${currentLocale}/success`}
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                >
+                  <input type="hidden" name="form-name" value="contact" />
+                  <input name="bot-field" style={{ display: "none" }} />
+                  <FirstColumn>
+                    <InputContainer>
+                      <StyledLabel htmlFor="firstName">
+                        First Name<sup>*</sup>
+                      </StyledLabel>
+                      <StyledInput
+                        type="text"
+                        placeholder="Enter your first name"
+                        id="firstName"
+                        name="firstName"
+                        required
+                      />
+                      <div className="bar" />
+                    </InputContainer>
+                    <InputContainer>
+                      <StyledLabel htmlFor="lastName">
+                        Last Name<sup>*</sup>
+                      </StyledLabel>
+                      <StyledInput
+                        type="text"
+                        placeholder="Enter your last name"
+                        id="lastName"
+                        name="lastName"
+                        required
+                      />
+                      <div className="bar" />
+                    </InputContainer>
+                    <InputContainer>
+                      <StyledLabel htmlFor="email">
+                        Email<sup>*</sup>
+                      </StyledLabel>
+                      <StyledInput
+                        type="email"
+                        placeholder="Enter your email address"
+                        id="email"
+                        name="email"
+                        required
+                      />
+                      <div className="bar" />
+                    </InputContainer>
+                    <InputContainer>
+                      <StyledLabel htmlFor="phone">Phone</StyledLabel>
+                      <StyledInput
+                        type="tel"
+                        placeholder="Enter your phone number"
+                        id="phone"
+                        name="phone"
+                      />
+                      <div className="bar" />
+                    </InputContainer>
+                    <InputContainer>
+                      <StyledLabel htmlFor="subject">
+                        Subject<sup>*</sup>
+                      </StyledLabel>
+                      <StyledInput
+                        type="text"
+                        placeholder="Enter subject"
+                        id="subject"
+                        name="subject"
+                        required
+                      />
+                      <div className="bar" />
+                    </InputContainer>
+                  </FirstColumn>
+                  <SecondColumn>
+                    <InputContainer className="textareaContainer">
+                      <StyledLabel htmlFor="message">
+                        Message<sup>*</sup>
+                      </StyledLabel>
+                      <StyledTextbox
+                        required
+                        placeholder="What's up?"
+                        id="message"
+                        name="message"
+                      />
+                      <div className="bar" />
+                      <Annotation>fields with * are required</Annotation>
+                    </InputContainer>
+                    <StyledButton type="submit">Send</StyledButton>
+                  </SecondColumn>
+                </Form>
+              )}
+            </IntlContextConsumer>
           </ContactCard>
           <ContactAccent />
           <Information>

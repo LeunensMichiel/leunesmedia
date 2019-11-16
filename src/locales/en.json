@@ -8,7 +8,10 @@
         "filmmaking": "Filmmaking",
         "socials": "Socials",
         "contact": "Contact",
-        "footer": "All Rights Reserved."
+        "footer": "All Rights Reserved.",
+        "goback": "go back",
+        "success": "Success!",
+        "successmessage": "Message has been sent. I'll be in contact soon."
     },
     "SEO": {
         "indexTitle": "Portfolio Leunes Media",
