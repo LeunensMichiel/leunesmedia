@@ -10,7 +10,7 @@
         "contact": "Contact",
         "footer": "All Rights Reserved.",
         "goback": "go back",
-        "success": "Success!",
+        "success": "Woosh!",
         "successmessage": "Message has been sent. I'll be in contact soon."
     },
     "SEO": {
@@ -50,7 +50,7 @@
         "badge2": "Eager Learner",
         "badge3": "Passionate",
         "badge4": "Social",
-        "badge5": "Coffee Lover",
+        "badge5": "Coffee Lover ☕",
         "mySkills": "My Skills",
         "knowledge": "I also have an extensive knowledge of",
         "current": "Currently shooting",
@@ -61,6 +61,7 @@
         "german": "German",
         "footnote": "*excluding basic knowledge of a lot of other frameworks/libraries/software/etc",
         "exp": "experience",
+        "expTitle": "Experience.",
         "timeline": "My personal timeline"
     },
     "photography": {
@@ -79,12 +80,12 @@
     },
     "dev": {
         "nerd": "I'm a ner",
-        "dev": "developer",
+        "dev": "developer.",
         "coffeeAlt": "Laptop and Coffee",
         "templates": "No templates. No Wordpress.",
         "count1": "This site is",
         "count2": "made of organic code.",
-        "otherStuff": "Oh, and here's some other stuff I've made",
+        "otherStuff": "Oh, and here's some other stuff I've made.",
         "git": "Please head over to",
         "git2": "for more information about my skills and technology-knowledge.",
         "twallieAlt": "Screenshot of the website of DJ Twallie, made by Michiel Leunens",
@@ -110,7 +111,7 @@
         "morAlt": "Screenshot of the website of Morocco-Adventures-travel.com, a website made by Michiel Leunens"
     },
     "socials": {
-        "desc": " Want to know what I'm up to or see more of my work? Follow me on these platforms!",
+        "desc": "Want to know what I'm up to or see more of my work? Follow me on these platforms!",
         "icon1": "facebook-page",
         "icon2": "the gram",
         "icon3": "dev-stuff",
