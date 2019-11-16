@@ -888,7 +888,7 @@ const GhenterpriseImage = styled.div`
 
 const MorrocoCard = styled.div`
 	width: 100%;
-	height: 350px;
+	min-height: 400px;
 	padding: 1em;
 	background: #37383b;
 	display: flex;

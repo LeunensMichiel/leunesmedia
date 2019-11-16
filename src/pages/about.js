@@ -2,7 +2,7 @@ import React, { PureComponent } from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
-import { injectIntl } from "gatsby-plugin-intl"
+import { injectIntl, IntlContextConsumer } from "gatsby-plugin-intl"
 
 import Layout from "../components/layout"
 import colors from "../components/Framework/colors"
@@ -753,17 +753,37 @@ class about extends PureComponent {
 						<ExperienceTitle>{intl.formatMessage({ id: "about.expTitle" })}</ExperienceTitle>
 						<ExperienceSubtitle>{intl.formatMessage({ id: "about.timeline" })}</ExperienceSubtitle>
 					</ExperienceHeader>
-					<TimelineContainer>
-						{data.timelineItems.edges.map(item => (
-							<TimelineItem key={item.node.frontmatter.timelineTitle}>
-								<TimelineItemContent>
-									<TimelineTitle>{item.node.frontmatter.timelineTitle}</TimelineTitle>
-									<TimelineText>{item.node.frontmatter.timelineDescription}</TimelineText>
-									<TimelineRectangle>{item.node.frontmatter.year}</TimelineRectangle>
-								</TimelineItemContent>
-							</TimelineItem>
-						))}
-					</TimelineContainer>
+					<IntlContextConsumer>
+						{({ language: currentLocale }) => (
+							<>
+								{currentLocale === "nl" ? (
+									<TimelineContainer>
+										{data.timelineItems.edges.map(item => (
+											<TimelineItem key={item.node.frontmatter.timelineTitleNl}>
+												<TimelineItemContent>
+													<TimelineTitle>{item.node.frontmatter.timelineTitleNl}</TimelineTitle>
+													<TimelineText>{item.node.frontmatter.timelineDescriptionNl}</TimelineText>
+													<TimelineRectangle>{item.node.frontmatter.year}</TimelineRectangle>
+												</TimelineItemContent>
+											</TimelineItem>
+										))}
+									</TimelineContainer>
+								) : (
+									<TimelineContainer>
+										{data.timelineItems.edges.map(item => (
+											<TimelineItem key={item.node.frontmatter.timelineTitle}>
+												<TimelineItemContent>
+													<TimelineTitle>{item.node.frontmatter.timelineTitle}</TimelineTitle>
+													<TimelineText>{item.node.frontmatter.timelineDescription}</TimelineText>
+													<TimelineRectangle>{item.node.frontmatter.year}</TimelineRectangle>
+												</TimelineItemContent>
+											</TimelineItem>
+										))}
+									</TimelineContainer>
+								)}
+							</>
+						)}
+					</IntlContextConsumer>
 				</ExperienceContainer>
 			</Layout>
 		)
@@ -802,6 +822,8 @@ export const query = graphql`
 					frontmatter {
 						timelineDescription
 						timelineTitle
+						timelineDescriptionNl
+						timelineTitleNl
 						year
 					}
 				}

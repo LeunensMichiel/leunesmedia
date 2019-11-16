@@ -36,13 +36,9 @@ collections:
     fields:
       - { label: "Title", name: "timelineTitle", widget: "string" }
       - { label: "Description", name: "timelineDescription", widget: "string" }
-      - {
-          label: "Year",
-          name: "year",
-          widget: "date",
-          default: "",
-          format: "YYYY",
-        }
+      - { label: "Title NL", name: "timelineTitleNl", widget: "string" }
+      - { label: "Description NL", name: "timelineDescriptionNl", widget: "string" }
+      - { label: "Year", name: "year", widget: "date", default: "", format: "YYYY" }
   - label: "Videos"
     name: "video"
     folder: "src/markdown/videos"
