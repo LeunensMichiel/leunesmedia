@@ -41,12 +41,34 @@ const LogoContainer = styled.div`
   flex-direction: column;
   margin: -20vh auto 0 auto;
   z-index: 3;
+
+  @media ${screens.mobileSLandscape} {
+    margin: 0 auto;
+  }
+
+  @media ${screens.mobileMLandscape} {
+    margin: 0 auto;
+  }
+  @media ${screens.tabletland} {
+    margin: 0 auto;
+  }
 `
 const StyledLogo = styled(Logo)`
   width: 100%;
   max-width: 660px;
   margin-bottom: 3em;
   fill: ${colors.white} !important;
+
+  @media ${screens.mobileSLandscape} {
+    width: 66%;
+  }
+
+  @media ${screens.mobileMLandscape} {
+    width: 66%;
+  }
+  @media ${screens.tabletland} {
+    width: 66%;
+  }
 `
 const StyledSubheader = styled.p`
   font-size: 0.9em;
@@ -115,6 +137,32 @@ const DownScroll = styled.div`
     height: 4em;
     width: 5em;
     transform: rotate(90deg);
+  }
+
+  @media ${screens.mobileSLandscape} {
+    bottom: 1em;
+
+    svg {
+      height: 3em;
+      width: 2em;
+    }
+  }
+
+  @media ${screens.mobileMLandscape} {
+    bottom: 1em;
+
+    svg {
+      height: 3em;
+      width: 2em;
+    }
+  }
+  @media ${screens.tabletland} {
+    bottom: 1em;
+
+    svg {
+      height: 3em;
+      width: 2em;
+    }
   }
 `
 const MainSection = styled.div`

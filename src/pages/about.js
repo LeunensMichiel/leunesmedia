@@ -28,11 +28,22 @@ const AboutContainer = styled.div`
   align-items: stretch;
   position: relative;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     flex-direction: row;
+    min-height: 90vh;
+    justify-content: center;
+  }
+
+  @media ${screens.laptop} {
     min-height: 85vh;
     padding: 20.2vh 0;
     justify-content: center;
+  }
+  @media ${screens.tabletland} {
+    padding: 20.2vh 1.5em;
+  }
+  @media ${screens.ipadProPortrait} {
+    padding: 20.2vh 1.5em;
   }
 `
 
@@ -111,11 +122,16 @@ const SocialSkill = styled.span`
 
   &:hover,
   &:focus {
-    color: ${colors.black};
+    /* color: ${colors.black}; */
+    background: ${colors.secondaryBlack};
   }
 
   @media ${screens.laptop} {
     margin: 0 0.5em;
+  }
+
+  @media ${screens.ipadProPortrait} {
+    margin: 0.5em 0.5em;
   }
 `
 
@@ -142,14 +158,67 @@ const DownScroll = styled.div`
     width: 5em;
     transform: rotate(90deg);
   }
+  @media ${screens.mobileSLandscape} {
+    bottom: 0.66em;
+
+    svg {
+      height: 3em;
+      width: 2em;
+    }
+  }
+
+  @media ${screens.mobileMLandscape} {
+    bottom: 0.66em;
+
+    svg {
+      height: 3em;
+      width: 2em;
+    }
+  }
+
+  @media ${screens.tabletland} {
+    bottom: 0.66em;
+
+    svg {
+      height: 3em;
+      width: 2em;
+    }
+  }
 `
 
 const AboutImg = styled(Img)`
   flex: 1;
   margin-bottom: 1.5em;
-  @media ${screens.laptop} {
-    margin-right: 5em;
+
+  @media ${screens.mobileSLandscape} {
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+  }
+  @media ${screens.mobileMLandscape} {
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+  }
+
+  @media ${screens.tablet} {
+    flex: 2;
+    margin-right: 1.5em;
     margin-bottom: 0em;
+  }
+
+  @media ${screens.laptop} {
+    flex: 1;
+    margin-right: 4em;
+  }
+
+  @media ${screens.tabletland} {
+    margin-right: 1.5em;
+  }
+
+  @media ${screens.ipadProPortrait} {
+    flex: 2;
+    margin-right: 1.5em;
   }
 `
 
@@ -168,6 +237,14 @@ const SkillsContainer = styled.div`
   @media ${screens.laptop} {
     padding: 15.1vh 0;
   }
+
+  @media ${screens.tabletland} {
+    padding: 15.1vh 1.5em;
+  }
+
+  @media ${screens.ipadProPortrait} {
+    padding: 15.1vh 1.5em;
+  }
 `
 
 const SkillsInnerContainer = styled.div`
@@ -181,7 +258,7 @@ const SkillsInnerContainer = styled.div`
   z-index: 4;
   text-align: center;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     flex-direction: row;
     text-align: right;
   }
@@ -195,10 +272,14 @@ const Skills = styled.div`
   width: 100%;
   margin-bottom: 1.5em;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     flex: 1;
-    margin-right: 2em;
+    margin-right: 1em;
     margin-bottom: 0;
+  }
+
+  @media ${screens.laptop} {
+    margin-right: 2em;
   }
 `
 
@@ -216,7 +297,7 @@ const Skill = styled.div`
     white-space: nowrap;
   }
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     align-items: center;
     flex-direction: ${props => (props.reverse ? "row-reverse" : "row")};
     margin: 0.2em 0;
@@ -225,6 +306,11 @@ const Skill = styled.div`
       ${props => (!props.reverse ? "margin-right: 1.5em" : "")};
       flex: 1;
     }
+  }
+
+  @media ${screens.mobileMLandscape} {
+    width: 350px;
+    margin: 0 auto 0.5em auto;
   }
 `
 
@@ -235,7 +321,11 @@ const Bar = styled.div`
   position: relative;
   margin-top: 0.5em;
 
+  @media ${screens.tablet} {
+    max-width: 200px;
+  }
   @media ${screens.laptop} {
+    max-width: 350px;
     margin-top: 0;
   }
 `
@@ -269,9 +359,13 @@ const OtherSkills = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     flex: 1;
     align-items: flex-end;
+    margin-left: 1em;
+  }
+
+  @media ${screens.laptop} {
     margin-left: 2em;
   }
 `
@@ -304,7 +398,7 @@ const AdobeSkills = styled.div`
     filter: brightness(0.7);
   }
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     margin: 0;
   }
 `
@@ -314,7 +408,7 @@ const Cameras = styled.div`
   flex-direction: column;
   margin: 1.5em 0;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     margin: 0;
   }
 `
@@ -330,7 +424,7 @@ const Languages = styled.div`
   width: 100%;
   margin: 1.5em 0;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     margin: 0;
   }
 `
@@ -357,6 +451,9 @@ const MySkillsBackground = styled.h1`
   margin: 0;
   opacity: 0.03;
 
+  @media ${screens.tablet} {
+    font-size: 10em;
+  }
   @media ${screens.laptop} {
     font-size: 15em;
   }
@@ -412,7 +509,7 @@ const TimelineContainer = styled.div`
     height: 100%;
   }
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     &:after {
       left: calc(50% - 2px);
     }
@@ -444,7 +541,7 @@ const TimelineItem = styled.div`
     }
   }
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     width: 50%;
 
     &:nth-child(odd) {
@@ -531,9 +628,6 @@ const TimelineRectangle = styled.span`
   color: ${colors.white};
   font-family: "Open Sans";
   font-weight: 700;
-
-  @media ${screens.laptop} {
-  }
 `
 
 export default class about extends PureComponent {

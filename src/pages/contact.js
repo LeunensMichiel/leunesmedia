@@ -27,6 +27,10 @@ const ContactContainer = styled.div`
   position: relative;
   margin: 20.2vh auto 0 auto;
   margin-bottom: 10.1vh;
+
+  @media ${screens.ipadProPortrait} {
+    min-height: 66vh;
+  }
 `
 
 const ContactCard = styled.div`
@@ -50,6 +54,13 @@ const ContactCard = styled.div`
     margin-left: unset;
     padding: 2.5em;
   }
+  @media ${screens.ipadProPortrait} {
+    margin-left: auto;
+    min-height: 45vh;
+  }
+  @media ${screens.tabletland} {
+    margin-left: auto;
+  }
 `
 
 const ContactAccent = styled.div`
@@ -64,6 +75,13 @@ const ContactAccent = styled.div`
   @media ${screens.laptop} {
     top: -2.5%;
     right: 2.5%;
+  }
+
+  @media ${screens.ipadProPortrait} {
+    right: 0;
+  }
+  @media ${screens.tabletland} {
+    right: 0;
   }
 `
 
@@ -85,7 +103,7 @@ const Information = styled.div`
   align-items: center;
   width: 100%;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     flex-direction: row;
   }
 `
@@ -97,7 +115,7 @@ const InformationBlock = styled.div`
   color: ${colors.secondaryBlack};
   margin: 0.5em 0;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     align-items: flex-start;
   }
 `

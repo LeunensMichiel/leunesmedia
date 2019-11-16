@@ -31,6 +31,14 @@ const Menu = styled.div`
     flex-direction: row;
     margin: 10.1vh 0;
   }
+
+  @media ${screens.ipadProPortrait} {
+    padding-right: 3em;
+  }
+
+  @media ${screens.tabletland} {
+    padding: 0 3em;
+  }
 `
 
 const MenuItem = styled.a`
@@ -76,13 +84,19 @@ const ImageGrid = styled.div`
   grid-auto-rows: minmax(225px, auto);
   margin-bottom: 10.1vh;
   padding: 0 1.5em;
-  width: 100%;
   max-width: 880px;
 
   @media ${screens.tablet} {
     grid-gap: 0.66em;
     grid-template-columns: 1fr 1fr;
     grid-auto-flow: dense;
+  }
+
+  @media ${screens.mobileSLandscape} {
+    grid-gap: 0.66em;
+  }
+  @media ${screens.mobileMLandscape} {
+    grid-gap: 0.66em;
   }
 `
 
@@ -93,7 +107,7 @@ const GridItem = styled.div`
     filter: brightness(0.7);
   }
   overflow: hidden;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: stretch;
   opacity: ${props => (props.isSelected ? "1" : ".33")};

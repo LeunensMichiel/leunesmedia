@@ -23,8 +23,14 @@ const SocialsContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media ${screens.tablet} {
-    margin: 20.2vh auto;
+  @media ${screens.mobileSLandscape} {
+    margin-top: 30vh;
+  }
+  @media ${screens.mobileMLandscape} {
+    margin-top: 30vh;
+  }
+  @media ${screens.tabletland} {
+    margin-top: 30vh;
   }
 `
 
@@ -37,7 +43,6 @@ const StyledP = styled.p`
 
   @media ${screens.tablet} {
     font-size: 1em;
-    padding: 0;
   }
 `
 
@@ -167,7 +172,7 @@ export default class soials extends PureComponent {
             <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
           </Helmet>
           <iframe
-            src="//lightwidget.com/widgets/5dc12e42abcb5e97b5f3fd2ee0589eb4.html"
+            src="https://cdn.lightwidget.com/widgets/5dc12e42abcb5e97b5f3fd2ee0589eb4.html"
             scrolling="no"
             allowtransparency="true"
             title="Instagram feed Leunes Media"

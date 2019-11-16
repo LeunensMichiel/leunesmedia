@@ -62,9 +62,10 @@ const Logo = styled(LMLogo)`
 const Copyright = styled.p`
   color: ${colors.secondaryBlack};
   margin: 0;
-  font-size: 0.9em;
+  font-size: 0.8em;
+  text-align: center;
 
-  @media ${screens.laptop} {
+  @media ${screens.tablet} {
     font-size: 1em;
   }
 `
