@@ -1,11 +1,12 @@
 ---
 timelineTitle: Graduated high school. 🎓
 timelineDescription: >-
-  Math-Latin (Cum Laude) at Sint-Niklaasinstituut in Anderlecht. I
+  Math-Latins (Cum Laude) at Sint-Niklaasinstituut in Brussels. I
   decided to follow my passion and went on to study Applied Computer Sciences at
   HoGent.
-timelineTitleNl: Afgestudeerd van middelbaar. 🎓
+timelineTitleNl: Afgestudeerd aan de humaniora. 🎓
 timelineDescriptionNl: >-
-  Wiskunde-Latijn (Cum Laude) aan het Sint-Niklaasinstituut in Anderlecht. Ik besloot mijn passie te volgen en ging voor Toegepaste Informatica aan HoGent.
+  Afgestudeerd Cum Laude in het Sint-Niklaasinstituut te Anderlecht, richting Latijn-Wiskunde. Ik besloot om mijn
+passie te volgen en schreef mij in aan de HoGent, Toegepaste Informatica.
 year: "2016"
 ---

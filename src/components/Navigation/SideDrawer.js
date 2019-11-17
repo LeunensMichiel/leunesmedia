@@ -172,6 +172,7 @@ const SideDrawer = ({ show, click, intl }) => {
           {({ languages, language: currentLocale }) =>
             languages.map(language => (
               <StyledSpan
+                key={language}
                 onClick={() => changeLocale(language)}
                 active={currentLocale === language ? "true" : "false"}
               >

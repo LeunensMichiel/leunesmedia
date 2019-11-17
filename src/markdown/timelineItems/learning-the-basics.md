@@ -5,6 +5,6 @@ timelineDescription: >-
   video, made movies and even uploaded them to YouTube!
 timelineTitleNl: Eerste stapjes. 🎬
 timelineDescriptionNl: >-
-  Wanneer ik 11 jaar oud was, begon ik een passie te ontwikkelen voor computers en video, maakte ik films en uploadde ze zelfs naar YouTube!
+  Ik was amper 11 toen ik mijn passie voor computer en video ontdekte, filmpjes maakte en ze al op YouTube zette!
 year: "2009"
 ---

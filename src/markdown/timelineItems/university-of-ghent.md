@@ -5,6 +5,6 @@ timelineDescription: >-
   Science.
 timelineTitleNl: Universiteit Gent. 📚
 timelineDescriptionNl: >-
-  Tijd om mezelf te testen! Ingeschreven voor Master in Industrial Engineering - Informatica.
+  Tijd om mezelf te testen! Ingeschreven voor de masteropleiding Industrieel Ingenieur Informatica.
 year: "2019"
 ---
