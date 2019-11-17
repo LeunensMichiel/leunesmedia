@@ -6,7 +6,6 @@ timelineDescription: >-
   HoGent.
 timelineTitleNl: Afgestudeerd aan de humaniora. 🎓
 timelineDescriptionNl: >-
-  Afgestudeerd Cum Laude in het Sint-Niklaasinstituut te Anderlecht, richting Latijn-Wiskunde. Ik besloot om mijn
-passie te volgen en schreef mij in aan de HoGent, Toegepaste Informatica.
+  Afgestudeerd Cum Laude in het Sint-Niklaasinstituut te Anderlecht, richting Latijn-Wiskunde. Ik besloot om mijn passie te volgen en schreef mij in aan de HoGent, Toegepaste Informatica.
 year: "2016"
 ---
