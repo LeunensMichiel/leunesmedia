@@ -3,10 +3,9 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { IntlContextConsumer } from "gatsby-plugin-intl"
-import SEOImage from "../images/seo.jpg"
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+function SEO({ description, meta, title }) {
+  const { site, seoImage } = useStaticQuery(
     graphql`
       query {
         site {
@@ -18,13 +17,20 @@ function SEO({ description, lang, meta, title }) {
             twitterUsername
           }
         }
+        seoImage: file(relativePath: { eq: "seo.jpg" }) {
+          childImageSharp {
+            fixed(width: 1440, quality: 100) {
+              ...GatsbyImageSharpFixed_withWebp
+            }
+          }
+        }
       }
     `
   )
 
   const metaDescription = description || site.siteMetadata.description
   const metaTitle = title || site.siteMetadata.title
-  const metaUrl = site.siteMetadata.url || "leunesmedia.com"
+  const metaUrl = `${site.siteMetadata.url}`
 
   return (
     <IntlContextConsumer>
@@ -37,54 +43,66 @@ function SEO({ description, lang, meta, title }) {
           titleTemplate={`%s || ${site.siteMetadata.title}`}
           meta={[
             {
-              name: `description`,
+              name: "description",
               content: metaDescription,
             },
             {
-              property: `og:title`,
+              property: "og:title",
               content: metaTitle,
-            },
-            {
-              property: `og:description`,
-              content: metaDescription,
-            },
-            {
-              property: `og:type`,
-              content: `website`,
             },
             {
               property: `og:url`,
               content: metaUrl,
             },
             {
-              property: `og:image`,
-              content: SEOImage,
-            },
-            {
-              name: `twitter:card`,
-              content: `summary`,
-            },
-            {
-              name: `twitter:creator`,
-              content: site.siteMetadata.author,
-            },
-            {
-              name: `twitter:title`,
-              content: title,
-            },
-            {
-              name: `twitter:description`,
+              property: "og:description",
               content: metaDescription,
             },
             {
-              property: `twitter:url`,
-              content: metaUrl,
+              name: "twitter:creator",
+              content: site.siteMetadata.author,
             },
             {
-              property: `twitter:image`,
-              content: SEOImage,
+              name: "twitter:title",
+              content: title,
             },
-          ].concat(meta)}
+            {
+              name: "twitter:description",
+              content: metaDescription,
+            },
+            {
+              name: "google-site-verification",
+              content: "742YU2tHv2fwuBwpf7hkksBzsNnd4UfTfUj85XbcfBc",
+            },
+          ]
+            .concat(
+              seoImage
+                ? [
+                    {
+                      property: "og:image",
+                      content: seoImage.src,
+                    },
+                    {
+                      property: "og:image:width",
+                      content: seoImage.width,
+                    },
+                    {
+                      property: "og:image:height",
+                      content: seoImage.height,
+                    },
+                    {
+                      name: "twitter:card",
+                      content: "summary_large_image",
+                    },
+                  ]
+                : [
+                    {
+                      name: "twitter:card",
+                      content: "summary",
+                    },
+                  ]
+            )
+            .concat(meta)}
         />
       )}
     </IntlContextConsumer>

@@ -14,20 +14,20 @@
         "successmessage": "Message has been sent. We'll be in touch soon."
     },
     "SEO": {
-        "indexTitle": "Portfolio Leunes Media",
-        "indexDesc": "Portfolio of Michiel Leunens, photographer, developer and filmmaker. Michiel is a Belgian computer sciences student with a passion for technology and pictures.",
-        "aboutTitle": "Biography of Leunes Media",
-        "aboutDesc": "More information regarding Michiel Leunens, Leunes Media. Skillset, curriculum vitae, personal timeline.",
+        "indexTitle": "Portfolio",
+        "indexDesc": "Portfolio of Michiel Leunens, photographer, developer and filmmaker. Michiel is a Belgian computer sciences student with a passion for technology and pictures. Already having a bachelor degree Applied Computer Sciences, Michiel keeps pursuing his dream to become a full stack developer and aspiring photographer. Enter to view more of his work, or to contact him.",
+        "aboutTitle": "Biography",
+        "aboutDesc": "More information regarding Michiel Leunens, Leunes Media. His skillset as a developer, curriculum vitae and personal timeline. Get to know him better.",
         "photoTitle": "Photography",
-        "photoDesc": "Some shots taken by Michiel Leunens, Leunes Media. Michiel shoots events, products, landscapes, weddings, corporations and more.",
+        "photoDesc": "Some shots taken by Michiel Leunens, Leunes Media. Michiel shoots events, products, landscapes, weddings, corporations and everything in between.",
         "devTitle": "Development",
-        "devDesc": "Web and mobile projects made by Michiel Leunens, Leunes Media",
+        "devDesc": "Web and mobile projects made by Michiel Leunens, Leunes Media. Michiel is currently studying Computer Engineering and already has his Bachelor Degree of Applied Computer Sciences.",
         "filmTitle": "Filmmaking",
         "filmDesc": "Videos made by Michiel Leunens, Leunes Media. Videos categories range from aftermovies and events to corporate. Or just plain, fun stuff.",
         "socialsTitle": "Socials",
         "socialsDesc": "Socials of Leunes Media. Visit his Facebook, Instagram, Github and more.",
-        "contactTitle": "Contact Leunes Media",
-        "contactDesc": "Contact Michiel Leunens, Leunes Media, for more information. Leave a message behind!"
+        "contactTitle": "Contact",
+        "contactDesc": "Contact Michiel Leunens, Leunes Media. Contact him if you want to work together, or just want to have a regular good chat. Please leave a message behind!"
     },
     "index": {
         "header1": "Photographer & Filmmaker",
@@ -37,7 +37,7 @@
         "dev": "Web & Mobile Developer",
         "filmmaker": "Filmmaker",
         "photoContent": "From moody landscapes to atmospheric images of events and parties. Weddings, portraits, products... I do them all! The feeling of capturing a moment, that's what I do it for.",
-        "devContent": "Graduated as an Computer Sciences Engineer, I like to focus on developing web and mobile applications. But not without my coffee!",
+        "devContent": "Graduated as a Computer Sciences Engineer, I like to focus on developing web and mobile applications. But not without my coffee!",
         "filmContent": "Aftermovie? Music video? Corporate event? Your search is at an end. Team up with someone who has been playing with Adobe After Effects since he was 11 years old!",
         "learnBtn": "Learn More"
     },

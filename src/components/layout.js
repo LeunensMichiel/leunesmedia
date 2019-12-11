@@ -4,11 +4,11 @@ import { Location } from "@reach/router"
 import { IconContext } from "react-icons"
 
 import Toolbar from "./Navigation/Toolbar"
-import "../stylesheets/lmStyle.scss"
 import SideDrawer from "./Navigation/SideDrawer"
 import Backdrop from "./Navigation/Backdrop"
 import Footer from "./Footer/Footer"
 
+import "../stylesheets/lmStyle.scss"
 export default class Layout extends PureComponent {
   state = {
     sideDrawerOpen: false,
@@ -38,7 +38,7 @@ export default class Layout extends PureComponent {
       <>
         <IconContext.Provider value={{ className: "social__icons" }}>
           <Location>
-            {({ navigate, location }) => (
+            {({ location }) => (
               <Toolbar
                 hamburgerClickHandler={this.drawerToggleClickHandler}
                 isDark={

@@ -6,7 +6,7 @@
 
 Portfolio of Michiel Leunens, founder of Leunes Media.
 
-> All photo's are mine. Except from the earlier commits. Example data.
+> All photo's are mine pls do not steal. Except from the earlier commits, those photo's belong to Unsplash and their respective users.
 
 ## Made with
 

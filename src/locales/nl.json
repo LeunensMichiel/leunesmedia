@@ -14,20 +14,20 @@
         "successmessage": "Uw bericht is verstuurd. Ik neem zo snel mogelijk contact met u op."
     },
     "SEO": {
-        "indexTitle": "Portfolio Leunes Media",
-        "indexDesc": "Portfolio van Michiel Leunens, fotograaf, ontwikkelaar en content creator. Michiel is een Belgische student met een vurige passie voor technologie en fotografie. Michiel is afgestudeerd als Toegepaste Informaticus en studeert nu verder voor Industrieel Software-ingenieur.",
-        "aboutTitle": "Biografie van Leunes Media",
-        "aboutDesc": "Kom meer te weten over Michiel Leunens, Leunes Media. Zijn skillset, curriculum vitae en persoonlijke tijdlijn.",
+        "indexTitle": "Portfolio",
+        "indexDesc": "Portfolio van Michiel \"Leunes Media\" Leunens, fotograaf, ontwikkelaar en filmmaker. Michiel is een Belgische student met een vurige passie voor technologie en fotografie. Michiel is afgestudeerd als Toegepaste Informaticus en studeert nu verder voor Industrieel Software-ingenieur. Betreed zijn website voor meer informatie of om hem te contacteren.",
+        "aboutTitle": "Biografie",
+        "aboutDesc": "Kom meer te weten over Michiel Leunens, Leunes Media. Zijn skillset als een ontwikkelaar, zijn curriculum vitae en persoonlijke tijdlijn. Kom meer over hem te weten!",
         "photoTitle": "Fotografie",
-        "photoDesc": "Enkele plaatjes genomen door Michiel Leunens, Leunes Media. Michiel fotografeert evenementen, producten, landschappen, trouwen, bedrijven en meer.",
+        "photoDesc": "Enkele foto's genomen door Michiel Leunens, Leunes Media. Michiel fotografeert evenementen, producten, landschappen, trouwen, bedrijven en alles er tussenin. ",
         "devTitle": "Ontwikkeling",
-        "devDesc": "Web -en mobiele applicaties van Michiel Leunens, Leunes Media",
+        "devDesc": "Web -en mobiele applicaties van Michiel Leunens, Leunes Media. Michiel studeert momenteel Industrieel Softwareingenieur aan de UGent, en heeft zijn toegepaste-informatica bachelordiploma reeds op zak.",
         "filmTitle": "Video",
         "filmDesc": "Video's gemaakt door Michiel Leunens, Leunes Media. Soorten video's gaan van aftermovies en evenementen tot bedrijven enzovoort. Of enkele bizarre video's. Dat kan hij ook wel.",
-        "socialsTitle": "Sociale Media",
+        "socialsTitle": "Socials",
         "socialsDesc": "Sociale Media of Leunes Media (heh). Bezoek zijn Facebook, Instagram, Github enzovoort.",
-        "contactTitle": "Contacteer Leunes Media",
-        "contactDesc": "Contact Michiel Leunens, Leunes Media, voor meer informatie. Laat gerust een bericht achter!"
+        "contactTitle": "Contacteer",
+        "contactDesc": "Contact Michiel Leunens, Leunes Media, voor meer informatie. Wenst u samen te werken, of wil je gewoon meer te weten komen? Laat gerust een bericht achter!"
     },
     "index": {
         "header1": "Fotograaf & Filmmaker",
@@ -45,7 +45,7 @@
         "alt": "Een foto van mij.",
         "subtitle": "Mijn naam is Michiel Leunens.",
         "title": "Ik ben een professionele fotograaf, ontwikkelaar, filmmaker en vanallesennogwa.",
-        "content": "Welgekomen, welgekomen! Hebben we elkaar al ontmoet? Fijn je terug te zien! If not, dan zal ik me even voorstellen. Ik ben een Industrieel Software-Ingenieur aan de UGent. Afgestudeerd als Toegepaste Informaticus, heb ik het doel voor ogen om een full-stack ontwikkelaar te worden. Daarnaast ben ik ook fotograaf en filmmaker, en streef ernaar om mezelf keer op keer te verbeteren! Daarom richtte ik Leunes Media op, om studies en hobby's te combineren. Laten we samenwerken!",
+        "content": "Welgekomen, welgekomen! Hebben we elkaar al ontmoet? Fijn je terug te zien! If not, dan zal ik me even voorstellen. Ik ben een Industrieel Software-Ingenieur aan de UGent. Afgestudeerd als Toegepaste Informaticus, heb ik het doel voor ogen om een full-stack ontwikkelaar te worden. Daarnaast ben ik ook fotograaf en filmmaker, en streef ik ernaar om mezelf keer op keer te verbeteren! Daarom richtte ik Leunes Media op, om studies en hobby's te combineren. Laten we samenwerken!",
         "badge1": "Teamspeler",
         "badge2": "Altijd Bijleren",
         "badge3": "Met Passie",

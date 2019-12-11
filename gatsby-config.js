@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `Leunes Media`,
-    description: `Portfolio of Michiel Leunens, founder of Leunes Media`,
+    description: `Portfolio of Michiel Leunens, founder of Leunes Media. Michiel is a Belgian developer, filmmaker and photographer. Enter to view more of his work or to contact him.`,
     author: `@LeunensMichiel`,
     url: `https://www.leunesmedia.com`,
-    twitterUsername: `@Deleunes254`,
+    twitterUsername: `@leunesmedia`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
