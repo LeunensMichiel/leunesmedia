@@ -31,6 +31,7 @@ function SEO({ description, meta, title }) {
   const metaDescription = description || site.siteMetadata.description
   const metaTitle = title || site.siteMetadata.title
   const metaUrl = `${site.siteMetadata.url}`
+  console.log("seoImage", seoImage)
 
   return (
     <IntlContextConsumer>
@@ -80,15 +81,15 @@ function SEO({ description, meta, title }) {
                 ? [
                     {
                       property: "og:image",
-                      content: seoImage.src,
+                      content: seoImage.childImageSharp.fixed.src,
                     },
                     {
                       property: "og:image:width",
-                      content: seoImage.width,
+                      content: seoImage.childImageSharp.fixed.width,
                     },
                     {
                       property: "og:image:height",
-                      content: seoImage.height,
+                      content: seoImage.childImageSharp.fixed.height,
                     },
                     {
                       name: "twitter:card",
