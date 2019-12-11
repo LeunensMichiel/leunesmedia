@@ -127,7 +127,13 @@ const StyledSpan = styled.span`
 const SideDrawer = ({ show, click, intl }) => {
   return (
     <Navigation show={show.toString()}>
-      <span onClick={click}>
+      <span
+        onClick={click}
+        onKeyDown={click}
+        aria-pressed="false"
+        tabIndex="0"
+        role="button"
+      >
         <Cross />
       </span>
       <NavigationItems>

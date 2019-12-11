@@ -64,7 +64,13 @@ const Header = styled.header`
 
 const Toolbar = ({ isDark, hamburgerClickHandler }) => (
   <Header>
-    <span onClick={hamburgerClickHandler}>
+    <span
+      onClick={hamburgerClickHandler}
+      onKeyDown={hamburgerClickHandler}
+      aria-pressed="false"
+      tabIndex="0"
+      role="button"
+    >
       <HamburgerIcon isdark={isDark.toString()} id="hamburger" />
     </span>
   </Header>

@@ -2,6 +2,7 @@ import React, { PureComponent } from "react"
 import PropTypes from "prop-types"
 import { Location } from "@reach/router"
 import { IconContext } from "react-icons"
+import { isIE } from "react-device-detect"
 
 import Toolbar from "./Navigation/Toolbar"
 import SideDrawer from "./Navigation/SideDrawer"
@@ -30,6 +31,13 @@ export default class Layout extends PureComponent {
     const { children } = this.props
     const { sideDrawerOpen } = this.state
     let backdrop
+
+    if (isIE) {
+      alert(
+        "Internet Explorer is ancient and not supported. Please download a modern browser like Chrome, Firefox or Safari"
+      )
+    }
+
     if (sideDrawerOpen) {
       backdrop = <Backdrop click={this.backdropToggleClickHandler} />
     }

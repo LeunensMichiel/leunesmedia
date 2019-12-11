@@ -997,8 +997,7 @@ class development extends PureComponent {
   constructor() {
     super()
     this.state = {
-      start: 100,
-      played: false,
+      didViewCountUp: false,
       typingDone: false,
     }
     this.mainRef = React.createRef()
@@ -1008,9 +1007,15 @@ class development extends PureComponent {
     ref.current.scrollIntoView({ behavior: "smooth" })
   }
 
+  onVisibilityChange = isVisible => {
+    if (isVisible) {
+      this.setState({ didViewCountUp: true })
+    }
+  }
+
   render() {
     const { data, intl } = this.props
-    const { start, played, typingDone } = this.state
+    const { didViewCountUp, typingDone } = this.state
     return (
       <Layout>
         <SEO
@@ -1043,57 +1048,59 @@ class development extends PureComponent {
           alt={intl.formatMessage({ id: "dev.coffeeAlt" })}
           fluid={data.headerImage.childImageSharp.fluid}
         />
-        <VisibilitySensor
-          partialVisibility
-          onChange={isVisible => {
-            this.setState({ start: isVisible && !played ? 0 : 100 })
-          }}
-        >
-          <OrganicContainer ref={this.mainRef}>
-            <OrganicText>
-              <StyledCoffee />
-              <AboveHeader>
-                {intl.formatMessage({ id: "dev.templates" })}
-              </AboveHeader>
-              <Header>
-                {intl.formatMessage({ id: "dev.count1" })}{" "}
+        <OrganicContainer ref={this.mainRef}>
+          <OrganicText>
+            <StyledCoffee />
+            <AboveHeader>
+              {intl.formatMessage({ id: "dev.templates" })}
+            </AboveHeader>
+            <Header>
+              {intl.formatMessage({ id: "dev.count1" })}{" "}
+              <VisibilitySensor
+                onChange={this.onVisibilityChange}
+                offset={{
+                  top: 10,
+                }}
+                delayedCall
+              >
                 <CountUp
-                  start={start}
-                  end={100}
+                  start={0}
+                  end={didViewCountUp ? 100 : 0}
                   duration={2.75}
                   suffix="% "
-                  delay={1}
-                  onEnd={() => this.setState({ played: true })}
+                  delay={0}
                   easingFn={(t = 0.19, b = 1, c = 0.22, d = 1) =>
                     c * (-Math.pow(2, (-10 * t) / d) + 1) + b
                   }
-                />
-                {intl.formatMessage({ id: "dev.count2" })}
-              </Header>
-            </OrganicText>
-            <OtherStuff>
-              <OtherHeader>
-                {intl.formatMessage({ id: "dev.otherStuff" })}
-              </OtherHeader>
-              <OtherSubHeader>
-                {intl.formatMessage({ id: "dev.git" })}{" "}
-                <Link className="simpleAnchor" to="/about">
-                  {intl.formatMessage({ id: "general.about" })}
-                </Link>{" "}
-                {intl.formatMessage({ id: "dev.or" })}{" "}
-                <a
-                  href="https://github.com/LeunensMichiel"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="simpleAnchor"
                 >
-                  Github
-                </a>{" "}
-                {intl.formatMessage({ id: "dev.git2" })}
-              </OtherSubHeader>
-            </OtherStuff>
-          </OrganicContainer>
-        </VisibilitySensor>
+                  {({ countUpRef }) => <span ref={countUpRef} />}
+                </CountUp>
+              </VisibilitySensor>
+              {intl.formatMessage({ id: "dev.count2" })}
+            </Header>
+          </OrganicText>
+          <OtherStuff>
+            <OtherHeader>
+              {intl.formatMessage({ id: "dev.otherStuff" })}
+            </OtherHeader>
+            <OtherSubHeader>
+              {intl.formatMessage({ id: "dev.git" })}{" "}
+              <Link className="simpleAnchor" to="/about">
+                {intl.formatMessage({ id: "general.about" })}
+              </Link>{" "}
+              {intl.formatMessage({ id: "dev.or" })}{" "}
+              <a
+                href="https://github.com/LeunensMichiel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="simpleAnchor"
+              >
+                Github
+              </a>{" "}
+              {intl.formatMessage({ id: "dev.git2" })}
+            </OtherSubHeader>
+          </OtherStuff>
+        </OrganicContainer>
         <TwallieContainer>
           <TwallieSecondContainer>
             <TwallieSiteImg
