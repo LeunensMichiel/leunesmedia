@@ -73,6 +73,10 @@ function SEO({ description, meta, title }) {
               content: title,
             },
             {
+              name: "twitter:site",
+              content: "@leunesmedia",
+            },
+            {
               name: "twitter:description",
               content: metaDescription,
             },
@@ -107,6 +111,10 @@ function SEO({ description, meta, title }) {
                     {
                       property: "og:image:type",
                       content: "image/jpeg",
+                    },
+                    {
+                      property: "twitter:image",
+                      content: seoImage.childImageSharp.original.height,
                     },
                     {
                       name: "twitter:card",
