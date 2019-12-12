@@ -80,7 +80,7 @@ function SEO({ description, meta, title }) {
                 ? [
                     {
                       property: "og:image",
-                      content: seoImage.childImageSharp.fixed.src,
+                      content: `${site.siteMetadata.url}${seoImage.childImageSharp.fixed.src}`,
                     },
                     {
                       property: "og:image:width",
