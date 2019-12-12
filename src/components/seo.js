@@ -19,8 +19,10 @@ function SEO({ description, meta, title }) {
         }
         seoImage: file(relativePath: { eq: "seo.jpg" }) {
           childImageSharp {
-            fixed(width: 1440, quality: 100) {
-              ...GatsbyImageSharpFixed_withWebp
+            original {
+              src
+              width
+              height
             }
           }
         }
@@ -55,6 +57,10 @@ function SEO({ description, meta, title }) {
               content: metaUrl,
             },
             {
+              property: `og:type`,
+              content: "website",
+            },
+            {
               property: "og:description",
               content: metaDescription,
             },
@@ -80,15 +86,27 @@ function SEO({ description, meta, title }) {
                 ? [
                     {
                       property: "og:image",
-                      content: `${site.siteMetadata.url}${seoImage.childImageSharp.fixed.src}`,
+                      content: `${site.siteMetadata.url}${seoImage.childImageSharp.original.src}`,
+                    },
+                    {
+                      property: "og:image:url",
+                      content: `${site.siteMetadata.url}${seoImage.childImageSharp.original.src}`,
+                    },
+                    {
+                      property: "og:image:secure_url",
+                      content: `${site.siteMetadata.url}${seoImage.childImageSharp.original.src}`,
                     },
                     {
                       property: "og:image:width",
-                      content: seoImage.childImageSharp.fixed.width,
+                      content: seoImage.childImageSharp.original.width,
                     },
                     {
                       property: "og:image:height",
-                      content: seoImage.childImageSharp.fixed.height,
+                      content: seoImage.childImageSharp.original.height,
+                    },
+                    {
+                      property: "og:image:type",
+                      content: "image/jpeg",
                     },
                     {
                       name: "twitter:card",
