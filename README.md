@@ -6,7 +6,7 @@
 
 Portfolio of Michiel Leunens, founder of Leunes Media.
 
-> All photo's are mine pls do not steal. Except from the earlier commits, those photo's belong to Unsplash and their respective users.
+> All photo's are mine pls do not steal. Except from the earlier commits, those photo's belong to Unsplash and their respective users. The 2 coffeeshots are from Ian Dooley & Di_An_h
 
 ## Made with
 
